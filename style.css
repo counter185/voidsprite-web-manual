@@ -39,6 +39,10 @@ body {
     padding-left: 20px;
 }
 
+.sidebar .redlink {
+    background: linear-gradient(to right, #302020ff, #0a0000ff, #0a0000ff, #0a0000ff, #201010ff);
+}
+
 .sidebar h1 {
     padding-left: 10px;
     text-align: left;

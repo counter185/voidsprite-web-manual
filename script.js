@@ -32,6 +32,9 @@ function changePage(link) {
 function linkElement(name, link) {
     var aElem = document.createElement("a");
     aElem.href = link;
+    if (link == "manual/under_construction.html") {
+        aElem.className = "redlink";
+    }
     aElem.textContent = name;
     aElem.onclick = function(event) {
         event.preventDefault();
