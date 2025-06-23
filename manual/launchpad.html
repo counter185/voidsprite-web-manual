@@ -1,0 +1,57 @@
+<!DOCTYPE html encode="UTF-8">
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" type="text/css" href="../style.css">
+    </head>
+    <body>
+        <div class="manual-body">
+            <h1>◆voidsprite Launchpad</h1>
+            <p>
+                This is the first workspace that appears when you open voidsprite.
+                It serves as voidsprite's main menu.
+                <br>
+                <img src="img/launchpad.png" alt="voidsprite Launchpad">
+            </p>
+
+            <h1>◆Create a new image</h1>
+            <p>
+                The New image panel lets you create a new image. Start by choosing one of 3 modes:
+                <ul>
+                    <li><strong>Pixel dimensions:</strong> create a new image based on the width and height.</li>
+                    <li><strong>Sprites/Tiles:</strong> create a new image based on cell dimensions and cell counts.
+                        <br>The resulting image will be of dimensions <code>cell width * cell count</code> x <code>cell height * cell count</code> and will have the proper tile grid set automatically.
+                    </li>
+                    <li><strong>Templates:</strong> create a new image based on a template.</li>
+                </ul>
+            </p>
+            <p>
+                If not using a template, click the <span class="vsp-button">Create (RGB)</span> or <span class="vsp-button">Create (Indexed)</span> button to create a new image and open it in a new workspace.
+            </p>
+
+            <h1>◆Open a file</h1>
+            <p>
+                To open a file, drag it into the window. This will open the file in a new workspace.
+                <br>
+                Alternatively, open the file picker with <span class="navbar-hint">File</span> &gt; <span class="navbar-hint">Open</span> on the navigation bar.
+            </p>
+
+            <h1>◆Open an image from the clipboard</h1>
+            <p>
+                To open an image from the clipboard, press the <span class="key-hint">Open from clipboard</span> keybind.
+                (Default: <span class="key-hint">Ctrl+V</span>)
+                <br>
+                Alternatively, use <span class="navbar-hint">File</span> &gt; <span class="navbar-hint">Open from clipboard</span> on the navigation bar.
+            </p>
+
+            <h1>◆Last open files</h1>
+            <p>
+                The Last open files panel shows the last 5 recently used files.
+                Click on a file to open it in a new workspace.
+            </p>
+        </div>
+    </body>
+</html>

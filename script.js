@@ -3,11 +3,12 @@ links = [
     { name: "Welcome", url: "manual/landing.html", subpages: [
         { name: "Open-source licenses", url: "manual/under_construction.html", subpages: [] },
     ] },
-    { name: "Getting started", url: "manual/under_construction.html", subpages: [
+    { name: "Introduction", url: "manual/introduction.html", subpages: [
+        { name: "System requirements", url: "manual/under_construction.html", subpages: [] },
         { name: "Supported formats", url: "manual/under_construction.html", subpages: [] },
         { name: "Workspaces", url: "manual/under_construction.html", subpages: [] },
     ] },
-    { name: "voidsprite Launchpad", url: "manual/under_construction.html", subpages: [
+    { name: "voidsprite Launchpad", url: "manual/launchpad.html", subpages: [
         { name: "About color modes", url: "manual/under_construction.html", subpages: [] },
         { name: "Templates", url: "manual/under_construction.html", subpages: [] },
         { name: "Quick Convert", url: "manual/under_construction.html", subpages: [] },
