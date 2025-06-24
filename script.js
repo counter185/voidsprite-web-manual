@@ -23,7 +23,9 @@ links = [
     ] },
     { name: "Split sessions", url: "manual/under_construction.html", subpages: [] },
     { name: "Multiple windows", url: "manual/under_construction.html", subpages: [] },
-    { name: "Settings", url: "manual/under_construction.html", subpages: [] },
+    { name: "Settings", url: "manual/under_construction.html", subpages: [
+        { name: "Application data directory", url: "manual/appdata.html", subpages: [] },
+    ] },
 ];
 
 function changePage(link) {

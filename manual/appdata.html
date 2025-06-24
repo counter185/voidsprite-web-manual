@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" type="text/css" href="../style.css">
+        <script src="singlepage.js"></script>
+        <meta charset="UTF-8">
+    </head>
+    <body onload="checkIframe()">
+        <div class="manual-body">
+            <h1>◆Application data directory</h1>
+            <p>
+                The application data directory stores the configuration and user content.
+                <br>To open it in the system's file manager, open <span class="navbar-hint">File</span> &gt; <span class="navbar-hint">Preferences</span> and go to <span class="vsp-button">Misc.</span> &gt; <span class="vsp-button">Open app data directory...</span>
+            </p>
+
+            <h2>◆Platform-specific location</h1>
+            <p>
+                The location of the application data directory depends on the platform:
+                <ul>
+                    <li><span class="platform platform-windows">Windows:</span> %APPDATA%/voidsprite</li>
+                    <li><span class="platform platform-mac">macOS:</span> ~/Library/Application Support/voidsprite</li>
+                    <li><span class="platform platform-linux">Linux:</span> ~/.var/app/com.github.counter185.voidsprite/config/voidsprite</li>
+                    <li><span class="platform platform-android">Android:</span> /sdcard/Android/data/pl.cntrpl.voidsprite/files</li>
+                </ul>
+            </p>
+
+            <h2>◆What's in the application data directory</h2>
+            <p>
+                The application data directory contains the following files and directories:
+                <ul>
+                    <li><span class="manual-directory">9segmentpatterns/</span>Stores 9-segment patterns.</li>
+                    <li><span class="manual-directory">autosaves/</span>Contains recovery autosaves. Any .voidsn file here will appear on the <span class="navbar-hint">Recovery autosaves</span> list.</li>
+                    <li><span class="manual-directory">palettes/</span>Putting compatible color palette files here will make them usable from the <span class="vsp-button">Palettes</span> list in the Editor.</li>
+                    <li><span class="manual-directory">patterns/</span>Putting images in Portable Bitmap .pbm or .xbm format here will make them usable from the pattern list in the Editor.</li>
+                    <li><span class="manual-directory">templates/</span>Putting images here will make them usable from the <span class="vsp-button">Templates</span> list on the Launchpad.</li>
+                    <li><span class="manual-directory">plugins/</span>Any native plugins in this folder will be loaded on launch.</li>
+                    <li><span class="manual-directory">visualconfigs/</span>Stores custom visual configurations.</li>
+                    <li><span class="manual-file">config.txt</span>Stores the configuration. Deleting this will reset all settings and keybinds to their defaults.</li>
+                    <li><span class="manual-file">voidsprite_log.txt</span>Log output created when voidsprite is ran. Contains information useful for debugging, so attach this file when reporting issues.</li>
+                </ul>
+            </p>
+        </div>
+    </body>
+</html>
