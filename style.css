@@ -183,6 +183,7 @@ div.content {
     text-decoration: underline;
     text-decoration-color: #bcc3c5;
     padding: 1px 0.5em;
+    white-space: nowrap;
 }
 
 .manual-body ul {
