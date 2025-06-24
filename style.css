@@ -79,8 +79,12 @@ div.content {
     color: white;
 }
 .manual-body img {
+    display: block;
     margin-top: 1em;
     width: 80%;
+}
+.manual-body img.img-small {
+    width: 30%;
 }
 
 .manual-body a {
@@ -88,7 +92,7 @@ div.content {
     text-decoration: underline;
 }
 
-.manual-body h2 {
+.manual-body h2, h3 {
     margin-top: 2em;
 }
 
@@ -107,6 +111,15 @@ div.content {
     font-weight: 700;
     background: #000000d0;
     padding: 1px 6px;
+}
+
+.manual-body .manual-link {
+    font-weight: 700;
+    border: 1px solid #808080;
+    color: #daf9ff;
+    text-decoration: underline;
+    text-decoration-color: #bcc3c5;
+    padding: 1px 0.5em;
 }
 
 .key-hint {

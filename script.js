@@ -6,7 +6,7 @@ links = [
     { name: "Introduction", url: "manual/introduction.html", subpages: [
         { name: "System requirements", url: "manual/under_construction.html", subpages: [] },
         { name: "Supported formats", url: "manual/under_construction.html", subpages: [] },
-        { name: "Workspaces", url: "manual/under_construction.html", subpages: [] },
+        { name: "Workspaces", url: "manual/workspaces.html", subpages: [] },
     ] },
     { name: "voidsprite Launchpad", url: "manual/launchpad.html", subpages: [
         { name: "About color modes", url: "manual/under_construction.html", subpages: [] },
