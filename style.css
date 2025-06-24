@@ -75,6 +75,12 @@ div.content {
 .manual-body p {
     margin-left: 2em;
 }
+.manual-body h1 {
+    width: 100%;
+    padding-bottom: 0.5em;
+    padding-left: 0.25em;
+    border-bottom: 1px solid #404040;
+}
 .manual-body h1, h2, h3, h4 {
     color: white;
 }
@@ -93,7 +99,13 @@ div.content {
 }
 
 .manual-body h2, h3 {
+    width: fit-content;
     margin-top: 2em;
+    padding-bottom:0.2em;
+    padding-left: 0.3em;
+    padding-right: 1em;
+    border-bottom: 1px solid #202020;
+    border-left: 1px solid #202020;
 }
 
 .navbar-hint {
