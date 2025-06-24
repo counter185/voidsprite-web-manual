@@ -139,7 +139,7 @@ div.content {
     width: 80%;
 }
 .manual-body img.img-small {
-    width: 30%;
+    width: max(30%, 200px);
 }
 
 .manual-body a {
