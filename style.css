@@ -1,3 +1,44 @@
+@keyframes slidein {
+    0% {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slidein-2 {
+    0% {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    10% {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slidein-3 {
+    0% {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    25% {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
 body {
     font-family: "M PLUS Rounded 1c", sans-serif;
     font-weight: 400;
@@ -6,6 +47,8 @@ body {
     margin:0;
     color: white;
     background: linear-gradient(120deg, #000000ff, #0a0a0aff);
+    animation-timing-function: ease-out;
+    animation-duration: 3s;
 }
 
 ul { 
@@ -66,7 +109,6 @@ div.content {
     border: none;
 }
 
-
 .manual-body {
     color: #d0d0d0;
     padding: 20px;
@@ -74,6 +116,9 @@ div.content {
 
 .manual-body p {
     margin-left: 2em;
+
+    animation-duration: 0.8s;
+    animation-name: slidein-2;
 }
 .manual-body h1 {
     width: 100%;
@@ -84,6 +129,9 @@ div.content {
 .manual-body h1, h2, h3, h4 {
     color: white;
     white-space: nowrap;
+
+    animation-duration: 0.8s;
+    animation-name: slidein;
 }
 .manual-body img {
     display: block;
@@ -136,6 +184,11 @@ div.content {
     padding: 1px 0.5em;
 }
 
+.manual-body ul {
+    animation-duration: 0.8s;
+    animation-name: slidein-3;
+}
+
 .key-hint {
     display: inline-block;
     border: 1px solid #808080;
@@ -151,4 +204,7 @@ div.content {
     border: 1px solid #fff12d;
     color: #fff898;
     padding: 10px 15px;
+
+    animation-duration: 0.8s;
+    animation-name: slidein-3;
 }

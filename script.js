@@ -62,5 +62,9 @@ function load() {
     iframe_content = document.getElementById("manual-content");
 
     evalLinks(links, div_links);
+
+    const queryParams = new URLSearchParams(window.location.search);
+    var page = queryParams.get("page") || "landing";
+    changePage("manual/" + page + ".html");
 }
 
