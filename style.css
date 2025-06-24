@@ -83,6 +83,7 @@ div.content {
 }
 .manual-body h1, h2, h3, h4 {
     color: white;
+    white-space: nowrap;
 }
 .manual-body img {
     display: block;
@@ -100,6 +101,7 @@ div.content {
 
 .manual-body h2, h3 {
     width: fit-content;
+
     margin-top: 2em;
     padding-bottom:0.2em;
     padding-left: 0.3em;
