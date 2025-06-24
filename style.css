@@ -60,6 +60,10 @@ li {
     margin-top: 0.3em;
 }
 
+.content {
+    background: linear-gradient(120deg, #000000ff, #0a0a0aff);
+}
+
 .sidebar {
     margin: 0;
     padding: 0;
