@@ -198,6 +198,11 @@ div.content {
     animation-name: slidein-3;
 }
 
+.manual-body table {
+    animation-duration: 0.8s;
+    animation-name: slidein-3;
+}
+
 .manual-body .platform {
     font-weight: 700;
     padding: 0.2em 6px;
@@ -257,4 +262,53 @@ div.content {
 
     animation-duration: 0.8s;
     animation-name: slidein-3;
+}
+
+
+.compat-table th {
+    font-weight: 700;
+    border-bottom: 1px solid #404040;
+    
+}
+.compat-table td {
+    padding: 0 0.5em;
+    text-align: center;
+    border-bottom: 1px solid #101010;
+    border-right: 1px solid #101010;
+}
+
+.compat-table .compat-full {
+    color: #b9ffb9;
+    font-size: 1.2em;
+    font-weight: 800;
+    background: linear-gradient(-45deg, #00ff2200, #1eff0010, #1eff0020, #1eff00e0);
+    border-right: 1px solid #1eff00;
+    border-bottom: 1px solid #1eff00;
+}
+
+.compat-table .compat-partial {
+    color: #feffcf;
+    font-size: 1.2em;
+    font-weight: 800;
+    background: linear-gradient(-45deg, #fbff0000, #fbff0010, #fbff0020, #fbff00a0);
+    border-right: 1px solid #939600;
+    border-bottom: 1px solid #939600;
+}
+
+.compat-table .compat-none {
+    color: #ff9292;
+    font-size: 1.2em;
+    font-weight: 800;
+    background: linear-gradient(-45deg, #ff000000, #ff000010, #ff000020, #ff0000a0);
+    border-right: 1px solid #ff0000;
+    border-bottom: 1px solid #ff0000;
+}
+
+.compat-table .compat-indev {
+    color: #cdecff;
+    font-size: 1.2em;
+    font-weight: 800;
+    background: linear-gradient(-45deg, #9de3ff00, #9de3ff10, #9de3ff20, #9de3ffa0);
+    border-right: 1px solid #dbefff;
+    border-bottom: 1px solid #dbefff;
 }
