@@ -5,9 +5,9 @@ function makeHeader() {
 }
 
 function makeReturnLink(page) {
-    return `<h4><a class="manual-link" href=${page}.html>
-                Back to previous page
-            </a></h4>`;
+    return '<h4><a class="manual-link" href=${page}.html> \
+                Back to previous page \
+            </a></h4>';
 }
 
 function checkIframe() {

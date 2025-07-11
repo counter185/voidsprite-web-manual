@@ -47,7 +47,7 @@ function linkElement(name, link) {
 }
 
 function evalLinks(pages, parentElement) {
-    pages.forEach(element => {
+    Array.prototype.forEach.call(pages, function(element) {
         var linkElem = linkElement(element.name, element.url);
         parentElement.appendChild(linkElem);
         if (element.subpages) {
@@ -65,8 +65,12 @@ function load() {
 
     evalLinks(links, div_links);
 
-    const queryParams = new URLSearchParams(window.location.search);
-    var page = queryParams.get("page") || "landing";
-    changePage("manual/" + page + ".html");
+    try {
+        const queryParams = new URLSearchParams(window.location.search);
+        var page = queryParams.get("page") || "landing";
+        changePage("manual/" + page + ".html");
+    } catch (e) {
+        changePage("manual/landing.html");
+    }
 }
 

@@ -39,6 +39,8 @@
     }
 }
 
+/*every color with alpha must be in rgba(..,..,..,..) for ie compat*/
+
 body {
     font-family: "M PLUS Rounded 1c", sans-serif;
     font-weight: 400;
@@ -46,7 +48,7 @@ body {
     padding:0;
     margin:0;
     color: white;
-    background: linear-gradient(120deg, #000000ff, #0a0a0aff);
+    background: linear-gradient(120deg, #000000, #0a0a0a);
     animation-timing-function: ease-out;
     animation-duration: 3s;
     overflow-x: hidden;
@@ -61,14 +63,15 @@ li {
 }
 
 .content {
-    background: linear-gradient(120deg, #000000ff, #0a0a0aff);
+    background: linear-gradient(120deg, #000000, #0a0a0a);
 }
 
 .sidebar {
     margin: 0;
     padding: 0;
+    width: 420px;   /*ie compat*/
     width: max(420px, 25%);
-    background: linear-gradient(90deg, #000000ff, #202020ff);
+    background: linear-gradient(90deg, #000000, #202020);
     position: fixed;
     height: 100%;
     overflow: auto;
@@ -78,17 +81,17 @@ li {
 
 .sidebar a {
   display: block;
-  background: linear-gradient(to right, #404040ff, #000000ff, #000000ff, #000000ff, #101010ff);
+  background: linear-gradient(90deg, #404040, #000000, #000000, #000000, #101010);
   color: white;
   padding: 16px;
   text-decoration: none;
   margin-top: 1px;
 }
 .sidebar a:hover {
-  background: linear-gradient(to right, #505050ff, #0a0a0aff, #0a0a0aff, #0a0a0aff, #101010ff);
+  background: linear-gradient(90deg, #505050, #0a0a0a, #0a0a0a, #0a0a0a, #101010);
 }
 .sidebar a.active {
-  background: linear-gradient(to right, #606060ff, #0a0a0aff, #0a0a0aff, #0a0a0aff, #101010ff);
+  background: linear-gradient(90deg, #606060, #0a0a0a, #0a0a0a, #0a0a0a, #101010);
   color: white;
 }
 
@@ -97,7 +100,7 @@ li {
 }
 
 .sidebar .redlink {
-    background: linear-gradient(to right, #302020ff, #0a0000ff, #0a0000ff, #0a0000ff, #201010ff);
+    background: linear-gradient(90deg, #302020, #0a0000, #0a0000, #0a0000, #201010);
 }
 
 .sidebar h1 {
@@ -107,7 +110,9 @@ li {
 
 div.content {
     position: fixed;
+    margin-left: 420px;  /*ie compat*/
     margin-left: max(420px, 25%);
+    width: calc(100% - 420px);   /*ie compat*/
     width: calc(100% - max(420px, 25%));
     height: 100%;
 }
@@ -211,22 +216,22 @@ div.content {
 .platform-windows {
     color: #44b4ff;
     border-left: 2px solid #44b4ff;
-    background: linear-gradient(to right, #44b4ff30, #00000000);
+    background: linear-gradient(90deg, rgba(68, 180, 255, 0.188), rgba(0, 0, 0, 0));
 }
 .platform-mac {
     color: #ffffff;
     border-left: 2px solid #ffffff;
-    background: linear-gradient(to right, #ffffff30, #00000000);
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.188), rgba(0, 0, 0, 0));
 }
 .platform-linux {
     color: #ff8f44;
     border-left: 2px solid #ff8f44;
-    background: linear-gradient(to right, #ff8f4430, #00000000);
+    background: linear-gradient(90deg, rgba(255, 143, 68, 0.188), rgba(0, 0, 0, 0));
 }
 .platform-android {
     color: #4aff44;
     border-left: 2px solid #4aff44;
-    background: linear-gradient(to right, #4aff4430, #00000000);
+    background: linear-gradient(90deg, rgba(74, 255, 68, 0.188), rgba(0, 0, 0, 0));
 }
 
 .manual-directory {
@@ -255,7 +260,7 @@ div.content {
 
 .block-warning {
     display: inline-block;
-    background: linear-gradient(to bottom, #fff12d30, #fff12d00);
+    background: linear-gradient(to bottom, rgba(255, 241, 45, 0.188), rgba(255, 241, 45, 0));
     border: 1px solid #fff12d;
     color: #fff898;
     padding: 10px 15px;
@@ -281,7 +286,7 @@ div.content {
     color: #b9ffb9;
     font-size: 1.2em;
     font-weight: 800;
-    background: linear-gradient(-45deg, #00ff2200, #1eff0010, #1eff0020, #1eff00e0);
+    background: linear-gradient(-45deg, rgba(0, 255, 34, 0), rgba(30, 255, 0, 0.063), rgba(30, 255, 0, 0.125), rgba(30, 255, 0, 0.878));
     border-right: 1px solid #1eff00;
     border-bottom: 1px solid #1eff00;
 }
@@ -290,7 +295,7 @@ div.content {
     color: #feffcf;
     font-size: 1.2em;
     font-weight: 800;
-    background: linear-gradient(-45deg, #fbff0000, #fbff0010, #fbff0020, #fbff00a0);
+    background: linear-gradient(-45deg, rgba(251, 255, 0, 0), rgba(251, 255, 0, 0.063), rgba(251, 255, 0, 0.125), rgba(251, 255, 0, 0.627));
     border-right: 1px solid #939600;
     border-bottom: 1px solid #939600;
 }
@@ -299,7 +304,7 @@ div.content {
     color: #ff9292;
     font-size: 1.2em;
     font-weight: 800;
-    background: linear-gradient(-45deg, #ff000000, #ff000010, #ff000020, #ff0000a0);
+    background: linear-gradient(-45deg, rgba(255, 0, 0, 0), rgba(255, 0, 0, 0.063), rgba(255, 0, 0, 0.125), rgba(255, 0, 0, 0.627));
     border-right: 1px solid #ff0000;
     border-bottom: 1px solid #ff0000;
 }
@@ -308,7 +313,7 @@ div.content {
     color: #cdecff;
     font-size: 1.2em;
     font-weight: 800;
-    background: linear-gradient(-45deg, #9de3ff00, #9de3ff10, #9de3ff20, #9de3ffa0);
+    background: linear-gradient(-45deg, rgba(157, 227, 255, 0), rgba(157, 227, 255, 0.063), rgba(157, 227, 255, 0.125), rgba(157, 227, 255, 0.627));
     border-right: 1px solid #dbefff;
     border-bottom: 1px solid #dbefff;
 }
