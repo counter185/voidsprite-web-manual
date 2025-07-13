@@ -4,7 +4,7 @@ links = [
         { name: "Open-source licenses", url: "manual/under_construction.html", subpages: [] },
     ] },
     { name: "Introduction", url: "manual/introduction.html", subpages: [
-        { name: "System requirements", url: "manual/under_construction.html", subpages: [] },
+        { name: "System requirements", url: "manual/requirements.html", subpages: [] },
         { name: "Supported formats", url: "manual/compatibility.html", subpages: [] },
         { name: "Workspaces", url: "manual/workspaces.html", subpages: [] },
     ] },
