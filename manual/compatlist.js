@@ -21,6 +21,7 @@ compatListTargets = [
         {name: "Valve Texture Format", ext: ".vtf", import: "~", export: "+"},
         {name: "Aseprite Sprite", ext: ".aseprite", import: "~", export: "+"},
         {name: "Piskel", ext: ".piskel", import: "~", export: "+"},
+        {name: "Lospec Pixel Editor", ext: ".lpe", import: "+", export: "+"},
     ]
 },
 {
