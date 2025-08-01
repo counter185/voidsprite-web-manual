@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" type="text/css" href="../style.css">
+        <script src="singlepage.js"></script>
+        <meta charset="UTF-8">
+    </head>
+    <body onload="checkIframe()">
+        <div class="manual-body">
+            <h1>◆Quick Convert</h1>
+            <p>
+                If you just want to quickly convert an image to a different format, you can use the Quick Convert feature.
+                <img class="img-realpx" src="img/quickconvert.png">
+
+                <div class="block-warning">
+                    Quick Convert is only available on desktop platforms.
+                </div>
+            </p>
+
+            <h2>◆Open Quick Convert</h2>
+            <p>
+                Quick Convert can be accessed from the <a class="manual-link" href="launchpad.html?back=quickconvert">voidsprite Launchpad</a> navigation bar: <br>
+                <span class="navbar-hint">File</span> &gt; <span class="navbar-hint">Quick Convert</span>
+            </p>
+
+            <h2>◆Using Quick Convert</h2>
+            <p>
+                First, choose the desired output format from the dropdown menu. <br>
+                Next, drag a supported image file you want to convert into the window. <br>
+                The image will be converted to the selected format and saved with the same file name + the new extension. <br><br>
+                For example, dragging in <code>image.png</code> and selecting <span class="vsp-button">OpenRaster</span> as the output format will save it to <code>image.png.ora</code>.
+            </p>
+
+            <h3>◆Converting indexed formats to RGB</h3>
+            <p>
+                Enabling the <span class="vsp-button">Always convert indexed formats to RGB</span> option will convert indexed images to RGB. <br><br>
+                For example, dragging in an image with an indexed color model (like RPG Maker XYZ) and converting it to PNG will save it as an RGB PNG instead of an indexed one.
+            </p>
+        </div>
+    </body>
+</html>
