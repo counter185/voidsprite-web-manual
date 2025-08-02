@@ -119,6 +119,9 @@ li {
 .sidebar .redlink {
     background: linear-gradient(90deg, #302020, #0a0000, #0a0000, #0a0000, #201010);
 }
+.sidebar .redlink:hover {
+    background: linear-gradient(90deg, #7a3636, #240b0b, #240b0b, #240b0b, #502323);
+}
 
 .sidebar h1 {
     padding-left: 10px;
@@ -174,6 +177,12 @@ div.content {
 .manual-body img.img-realpx {
     width: auto;
     height: auto;
+}
+.manual-body img.img-pattern {
+    image-rendering: pixelated;
+    display: inline-block;
+    width: auto;
+    vertical-align:bottom;
 }
 
 .manual-body a {

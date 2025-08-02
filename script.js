@@ -16,7 +16,7 @@ links = [
     ] },
     { name: "Editor", url: "manual/under_construction.html", subpages: [
         { name: "Tools", url: "manual/under_construction.html", subpages: [] },
-        { name: "Patterns", url: "manual/under_construction.html", subpages: [] },
+        { name: "Patterns", url: "manual/patterns.html", subpages: [] },
         { name: "Spritesheet preview", url: "manual/under_construction.html", subpages: [] },
         { name: "3D Cube preview", url: "manual/under_construction.html", subpages: [] },
         { name: "RPG Maker 2000/2003 map preview", url: "manual/under_construction.html", subpages: [] },
@@ -33,6 +33,14 @@ createdLinkElements = [];
 function deactivateAllLinkElements() {
     createdLinkElements.forEach(function(linkElem) {
         linkElem.classList.remove("sublink-active");
+    });
+}
+
+function highlightPageByLinkName(name) {
+    createdLinkElements.forEach(function(linkElem) {
+        if (linkElem.href.endsWith(name + ".html")) {
+            linkElem.classList.add("sublink-active");
+        }
     });
 }
 
@@ -81,6 +89,7 @@ function load() {
         const queryParams = new URLSearchParams(window.location.search);
         var page = queryParams.get("page") || "landing";
         changePage("manual/" + page + ".html");
+        highlightPageByLinkName(page);
     } catch (e) {
         changePage("manual/landing.html");
     }
