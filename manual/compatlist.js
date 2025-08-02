@@ -32,6 +32,7 @@ compatListTargets = [
         {name: "Mario Paint save file", ext: ".srm", import: "+", export: "-"},
         {name: "X-Com SPK, BDY, SCR", ext: ".spk .bdy .scr", import: "+", export: "-"},
         {name: "Windows Shell Scrap", ext: ".shs", import: "+", export: "-"},
+        {name: "Pix2D session", ext: ".pix2d", import: "~", export: "-"},
         {name: "Atrophy Engine texture", ext: ".aetex", import: "~", export: "-"},
         {name: "PS2 Icon", ext: ".icn .ico", import: "~", export: "-"},
         {name: "DirectDraw Surface", ext: ".dds", import: "~", export: "-"},
@@ -59,7 +60,8 @@ compatListTargets = [
         {name: "Hex palette", ext: ".hex", import: "+", export: "-"},
         {name: "paint.net palette", ext: ".txt", import: "+", export: "-"},
         {name: "JASC-PAL palette", ext: ".pal", import: "+", export: "-"},
-        {name: "GIMP GPL palette", ext: ".gpl", import: "+", export: "-"}
+        {name: "GIMP GPL palette", ext: ".gpl", import: "+", export: "-"},
+        {name: "Pixel Studio palette", ext: ".palette", import: "+", export: "-"}
     ]
 }
 ];
