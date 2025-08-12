@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" type="text/css" href="../style.css">
+        <script src="singlepage.js"></script>
+        <meta charset="UTF-8">
+    </head>
+    <body onload="checkIframe()">
+        <div class="manual-body">
+            <h1>◆Zlib compression</h1>
+            <p>
+                voidsprite can compress and decompress any file with zlib.
+            </p>
+
+            <h2>◆Decompress a zlib-compressed file</h2>
+            <p>
+                To decompress a file with zlib, drag a file with a <code>.zlib</code> extension into the
+                <a class="manual-link" href="launchpad.html?back=advanced_zlib">voidsprite Launchpad</a>.
+                <br><br>
+                The file will be decompressed and saved with to the same directory with the same name + the <code>.unzlib</code> extension.
+
+                <div class="block-hint">
+                    Zlib-compressed data starts with the byte <code>0x78</code> (<code>x</code> in ASCII), followed by a byte indicating the level of compression.
+                    <br>The file you drag into the Launchpad must contain only the compressed data.
+                </div>
+            </p>
+
+            <h2>◆Compress a file</h2>
+            <p>
+                To compress a file with zlib, drag a file with an <code>.unzlib</code> extension into the
+                <a class="manual-link" href="launchpad.html?back=advanced_zlib">voidsprite Launchpad</a>.
+                <br><br>
+                The file will be compressed and saved with to the same directory with the same name + the <code>.zlib</code> extension.
+            </p>
+        </div>
+    </body>
+</html>

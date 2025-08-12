@@ -27,6 +27,12 @@ links = [
     { name: "Settings", url: "manual/under_construction.html", subpages: [
         { name: "Application data directory", url: "manual/appdata.html", subpages: [] },
     ] },
+    { name: "Advanced features", url: "manual/advancedintro.html", subpages: [
+        { name: "Data extractor", url: "manual/under_construction.html", subpages: [] },
+        { name: "Image to code export", url: "manual/under_construction.html", subpages: [] },
+        { name: "Zlib compression", url: "manual/advanced_zlib.html", subpages: [] },
+        { name: "Native plugin API", url: "manual/under_construction.html", subpages: [] },
+    ] },
 ];
 
 createdLinkElements = [];
