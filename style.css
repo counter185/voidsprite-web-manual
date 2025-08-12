@@ -337,9 +337,19 @@ div.content {
 
 .block-warning {
     display: inline-block;
-    background: linear-gradient(to bottom, rgba(255, 241, 45, 0.188), rgba(255, 241, 45, 0));
-    border: 1px solid #fff12d;
+    background: linear-gradient(to right, rgba(255, 241, 45, 0.188), rgba(255, 241, 45, 0));
+    border-left: 1px solid #fff12d;
     color: #fff898;
+    padding: 10px 15px;
+
+    animation-duration: 0.8s;
+    animation-name: slidein-3;
+}
+
+.block-hint {
+    display: inline-block;
+    background: linear-gradient(to right, rgba(203, 224, 255, 0.088), rgba(203, 224, 255, 0));
+    border-left: 1px solid #7D8A9C;
     padding: 10px 15px;
 
     animation-duration: 0.8s;

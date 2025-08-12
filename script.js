@@ -20,6 +20,7 @@ links = [
         { name: "Spritesheet preview", url: "manual/under_construction.html", subpages: [] },
         { name: "3D Cube preview", url: "manual/under_construction.html", subpages: [] },
         { name: "RPG Maker 2000/2003 map preview", url: "manual/under_construction.html", subpages: [] },
+        { name: "Network canvas [BETA]", url: "manual/netcollab.html", subpages: [] },
     ] },
     { name: "Split sessions", url: "manual/under_construction.html", subpages: [] },
     { name: "Multiple windows", url: "manual/under_construction.html", subpages: [] },

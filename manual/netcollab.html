@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" type="text/css" href="../style.css">
+        <script src="singlepage.js"></script>
+        <meta charset="UTF-8">
+    </head>
+    <body onload="checkIframe()">
+        <div class="manual-body">
+            <h1>◆Network canvas [BETA]</h1>
+            <p>
+                Network canvas allows you to do real-time collaboration with multiple users.
+
+                <div class="block-warning">
+                    Network canvas is currently in beta phase.
+                    <br>Some features may not work as expected.
+                    <br>Save your work often.
+                </div>
+                <br><br>
+                <div class="block-hint">
+                    <span class="platform platform-mac">◆macOS:</span>
+                    <br>Network canvas features are currently not available on macOS.
+                </div>
+            </p>
+
+            <h2>◆Start a network canvas session server</h2>
+            <p>
+                To start a network canvas session, open an editor workspace and select
+                <span class="navbar-hint">File</span> &gt; <span class="navbar-hint">Start network canvas server</span> on the navigation bar.
+                <br><br>
+                You will have an option to choose your username, user color and the port to use.
+                <br><br>
+                Click <span class="vsp-button">Confirm</span> to start the server.
+
+                <div class="block-hint">
+                    The server will be hosted on all available network interfaces.
+                    <br>For a server to be accessible, one of the following conditions must be met:
+                    <ul>
+                        <li>The server is on the same local network as the client (connected to the same router or network switch)</li>
+                        <li>The server is on the same virtual network as the client (like Hamachi or ZeroTier)</li>
+                        <li>The server is properly port-forwarded for TCP connections</li>
+                    </ul>
+                </div>
+                <br><br>
+                <div class="block-hint">
+                    <span class="platform platform-windows">◆Windows:</span>
+                    <br>When hosting a server for the first time, you will receive a Windows Firewall popup to allow or deny voidsprite to use network sockets.
+                    <br>To host or connect to a server, you must allow this, ideally for both private and public connections.
+                    <br>If you deny, you must manually allow voidsprite in the Windows Firewall settings.
+                </div>
+            </p>
+
+            <h2>◆Connect to a network canvas session</h2>
+            <p>
+                From the <a class="manual-link" href="launchpad.html?back=netcollab">voidsprite Launchpad</a>, select
+                <span class="navbar-hint">File</span> &gt; <span class="navbar-hint">Connect to network canvas</span> on the navigation bar.
+                <br><br>
+                Enter the IP address/hostname and port of the server you want to connect to.
+                <br>
+                Enter your username and set your user color, then click <span class="vsp-button">Confirm</span> to connect.
+            </p>
+
+            <h3>◆Hostnames and IPv6 addresses</h3>
+            <p>
+                For easier connection, you can use hostnames instead of IP addresses.
+                <br>On Windows local networks, you can use the name of the computer, such as <code>DESKTOP-1234567</code>.
+
+                <br><br>You may also use IPv6 addresses.
+            </p>
+        </div>
+    </body>
+</html>
