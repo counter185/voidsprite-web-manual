@@ -18,10 +18,33 @@
                 This page lists the format compatibility of voidsprite.
             </p>
 
+            <table class="compat-table">
+                <tr>
+                    <th style="width: 3em;"></th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <td class="compat-full">+</td>
+                    <td>Full compatibility</td>
+                </tr>
+                <tr>
+                    <td class="compat-partial">~</td>
+                    <td>Partial compatibility</td>
+                </tr>
+                <tr>
+                    <td class="compat-none">-</td>
+                    <td>No compatibility</td>
+                </tr>
+                <tr>
+                    <td class="compat-indev">?</td>
+                    <td>In development</td>
+                </tr>
+            </table>
+
             <h2>◆Image formats</h2>
 
             <h3>◆Image import/export</h3>
-            <p>
+            <div>
                 <table id="table-importexport" class="compat-table">
                     <tr>
                         <th>Name</th>
@@ -30,21 +53,10 @@
                         <th>Export</th>
                     </tr>
                 </table>
-                <ul>
-                    <li><b>OpenRaster:</b> advanced features from painting programs like layer blend modes, etc. are not available here.
-                        <br>Exporting the thumbnail will not work until color quantization is implemented.</li>
-                    <li><b>Pixel Studio sessions:</b> a 1:1 read of this format requires accurately implementing every tool from that program. 
-                        <br>For the best experience, wipe the undo history before attempting an import (Functions -> Resize canvas -> Resize -> Yes).
-                        <br>Animation features are not supported.</li>
-                    <li><b>VTF:</b> no mipmaps are imported or exported.
-                        <br>Formats: I8, IA88, A8, RGB565,BGR888,RGB888, BGRA8888, RGBA8888, ARGB8888, ABGR8888, DXT1, DXT3, DXT5</li>
-                    <li><b>DIBv5:</b> JPEG, RLE4 and RLE8 subformats currently not supported.</li>
-                    <li><b>Aseprite:</b> experimental. Only frame 1 is loaded. Layer blend modes and tilemaps are not available here.</li>
-                </ul>
-            </p>
+            </div>
 
             <h3>◆Image import-only</h3>
-            <p>
+            <div>
                 <table id="table-import" class="compat-table">
                     <tr>
                         <th>Name</th>
@@ -53,15 +65,10 @@
                         <th>Export</th>
                     </tr>
                 </table>
-                <ul>
-                    <li><b>Wii TPL:</b> only I4, RGB5A3, RGBA32.</li>
-                    <li><b>AETEX:</b> GXT and Switch ASTC subformats not implemented</li>
-                    <li><b>DDS:</b> only BC1, BC2, BC3 and BGRA8888</li>
-                </ul>
-            </p>
+            </div>
 
             <h3>◆Image export-only</h3>
-            <p>
+            <div>
                 <table id="table-export" class="compat-table">
                     <tr>
                         <th>Name</th>
@@ -70,13 +77,10 @@
                         <th>Export</th>
                     </tr>
                 </table>
-                <ul>
-                    <li><b>Java BufferedImage:</b> only works for small images. Larger images go beyond the function size limit.</li>
-                </ul>
-            </p>
+            </div>
 
             <h2>◆Color palette formats</h2> 
-            <p>
+            <div>
                 <table id="table-palette" class="compat-table">
                     <tr>
                         <th>Name</th>
@@ -85,7 +89,7 @@
                         <th>Export</th>
                     </tr>
                 </table>
-            </p>
+            </div>
         </div>
     </body>
 </html>

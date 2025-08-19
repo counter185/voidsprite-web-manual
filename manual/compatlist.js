@@ -12,14 +12,28 @@ compatListTargets = [
         {name: "Portable Bitmap,<br>Graymap, Pixmap", ext: ".pbm .pgm .ppm", import: "+", export: "~"},
         {name: "X Bitmap", ext: ".xbm", import: "+", export: "+"},
         {name: "Windows cursor", ext: ".cur", import: "+", export: "+"},
-        {name: "OpenRaster", ext: ".ora", import: "+", export: "+"},
-        {name: "Pixel Studio session", ext: ".psp", import: "~", export: "+"},
+        {name: "OpenRaster", ext: ".ora", import: "+", export: "+",
+            notes: "advanced features from painting programs like layer blend modes, etc. are not available here."
+                    + "<br>Exporting the thumbnail will not work until color quantization is implemented." 
+        },
+        {name: "Pixel Studio session", ext: ".psp", import: "~", export: "+",
+            notes: "a 1:1 read of this format requires accurately implementing every tool from that program."
+                    + "<br>For the best experience, wipe the undo history before attempting an import (Functions -> Resize canvas -> Resize -> Yes)."
+                    + "<br>Animation features are not supported." 
+        },
         {name: "Pixel Studio session<br>(compressed)", ext: ".psx", import: "~", export: "+"},
         {name: "XYZ (RPG Maker 2000/2003)", ext: ".xyz", import: "+", export: "+"},
-        {name: "DIBv5 Clipboard dump", ext: ".dibv5", import: "~", export: "+"},
+        {name: "DIBv5 Clipboard dump", ext: ".dibv5", import: "~", export: "+",
+            notes: "JPEG, RLE4 and RLE8 subformats currently not supported."
+        },
         {name: "PBM (Cave Story engine)", ext: ".pbm", import: "+", export: "+"},
-        {name: "Valve Texture Format", ext: ".vtf", import: "~", export: "+"},
-        {name: "Aseprite Sprite", ext: ".aseprite", import: "~", export: "+"},
+        {name: "Valve Texture Format", ext: ".vtf", import: "~", export: "+",
+            notes: "no mipmaps are imported or exported."
+                    + "<br>Formats: I8, IA88, A8, RGB565,BGR888,RGB888, BGRA8888, RGBA8888, ARGB8888, ABGR8888, DXT1, DXT3, DXT5"
+        },
+        {name: "Aseprite session", ext: ".aseprite", import: "~", export: "+",
+            notes: "experimental. Only frame 1 is loaded. Layer blend modes and tilemaps are not available here."
+        },
         {name: "Piskel", ext: ".piskel", import: "~", export: "+"},
         {name: "Lospec Pixel Editor", ext: ".lpe", import: "+", export: "+"},
     ]
@@ -33,10 +47,19 @@ compatListTargets = [
         {name: "X-Com SPK, BDY, SCR", ext: ".spk .bdy .scr", import: "+", export: "-"},
         {name: "Windows Shell Scrap", ext: ".shs", import: "+", export: "-"},
         {name: "Pix2D session", ext: ".pix2d", import: "~", export: "-"},
-        {name: "Atrophy Engine texture", ext: ".aetex", import: "~", export: "-"},
+        {name: "Pixilart session", ext: ".pixil", import: "+", export: "-", 
+            notes: "animations and filters not supported [only frame 1 is imported]"
+        },
+        {name: "Atrophy Engine texture", ext: ".aetex", import: "~", export: "-",
+            notes: "GXT and Switch ASTC subformats not implemented"
+        },
         {name: "PS2 Icon", ext: ".icn .ico", import: "~", export: "-"},
-        {name: "DirectDraw Surface", ext: ".dds", import: "~", export: "-"},
-        {name: "Wii/GameCube TPL", ext: ".tpl", import: "~", export: "-"},
+        {name: "DirectDraw Surface", ext: ".dds", import: "~", export: "-",
+            notes: "only BC1, BC2, BC3 and BGRA8888"
+        },
+        {name: "Wii/GameCube TPL", ext: ".tpl", import: "~", export: "-",
+            notes: "only I4, RGB5A3, RGBA32"
+        },
         {name: "Windows 1.0/2.0/3.11 Paint", ext: ".msp", import: "?", export: "-"},
         {name: "PS Vita GXT", ext: ".gxt", import: "?", export: "-"},
         {name: "PSP/PS3 GIM", ext: ".gim", import: "?", export: "-"},
@@ -50,7 +73,9 @@ compatListTargets = [
         {name: "C header (as uint32_t array)", ext: ".h", import: "-", export: "+"},
         {name: "Python NumPy array", ext: ".py", import: "-", export: "+"},
         {name: "HTML Base64 image", ext: ".html", import: "-", export: "+"},
-        {name: "Java BufferedImage", ext: ".java", import: "-", export: "~"},
+        {name: "Java BufferedImage", ext: ".java", import: "-", export: "~",
+            notes: "only works for small images. Larger images go beyond the function size limit."
+        },
     ]
 },
 {
@@ -99,10 +124,20 @@ function makeCompatRow(name, ext, importStatus, exportStatus) {
 function makeCompatList() {
     compatListTargets.forEach(function (target) {
         var targetElement = document.getElementById(target.target);
+
         if (targetElement) {
+            var targetParent = targetElement.parentNode;
+            var notesList = document.createElement("ul");
+            targetParent.appendChild(notesList);
+
             target.compat.forEach(function (item) {
                 var row = makeCompatRow(item.name, item.ext, item.import, item.export);
                 targetElement.appendChild(row);
+                if (item.notes != undefined) {
+                    var noteItem = document.createElement("li");
+                    noteItem.innerHTML = "<b>" + item.name + "</b>: " + item.notes;
+                    notesList.appendChild(noteItem);
+                }
             });
         }
     });

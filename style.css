@@ -356,6 +356,9 @@ div.content {
     animation-name: slidein-3;
 }
 
+.compat-table {
+    margin-left: 2em;
+}
 
 .compat-table th {
     font-weight: 700;
