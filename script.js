@@ -31,7 +31,18 @@ links = [
         { name: "Data extractor", url: "manual/under_construction.html", subpages: [] },
         { name: "Image to code export", url: "manual/under_construction.html", subpages: [] },
         { name: "Zlib compression", url: "manual/advanced_zlib.html", subpages: [] },
-        { name: "Native plugin API", url: "manual/under_construction.html", subpages: [] },
+        { name: "Native plugin API", url: "manual/under_construction.html", subpages: [
+            { name: "Full API reference", url: "manual/api_full.html", subpages: [
+                { name: "File IO functions", url: "manual/under_construction.html", subpages: [] },
+                { name: "Filter functions", url: "manual/api_filters.html", subpages: [] },
+                { name: "Layer functions", url: "manual/api_layers.html", subpages: [] },
+                { name: "Editor functions", url: "manual/under_construction.html", subpages: [] },
+            ] },
+            { name: "Get started", url: "manual/under_construction.html", subpages: [] },
+            { name: "Custom file importers", url: "manual/under_construction.html", subpages: [] },
+            { name: "Custom filters", url: "manual/under_construction.html", subpages: [] },
+            { name: "Custom brushes", url: "manual/under_construction.html", subpages: [] },
+        ] }
     ] },
 ];
 

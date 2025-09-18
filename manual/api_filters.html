@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/default.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/c.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/cpp.min.js"></script>
+
+        <script>hljs.highlightAll();</script>
+
+        <link rel="stylesheet" type="text/css" href="../style.css">
+        <script src="singlepage.js"></script>
+        <meta charset="UTF-8">
+    </head>
+    <body onload="checkIframe()">
+        <div class="manual-body">
+            <h1>◆Native plugin API reference</h1>
+            <div class="block-warning">
+                This API is still in development and may change.
+            </div>
+
+            <h2>◆Filter functions</h2>
+
+            <h3><span class="fn"><span class="api-customtype">VSPFilter*</span>
+                 <span class="api-fn">registerFilter</span>
+                  (<span class="api-type">const char*</span> name, 
+                   <span class="api-type">[void(<span class="api-customtype">VSPLayer*</span>, <span class="api-customtype">VSPFilter*</span>)]</span> filterFunction)</span>
+            </h3>
+            <p>
+                Registers a new filter.
+                <br>The filter function will be called when the filter is applied to a layer.
+                <br>Filters can only be applied in RGB mode.
+                <br><br>Your filter function receives the <span class="api-customtype">VSPLayer</span> pointer containing target layer data, and needs to modify it.
+                <br>Your filter function will run on a new thread, but never concurrently with itself.
+                <br><br>This pointer is managed by voidsprite and should not be freed from plugin code.
+            </p>
+            <div class="api-block api-params">
+                <span class="api-param">name</span>: the name of the filter<br>
+                <span class="api-param">filterFunction</span>: the function to call when the filter is applied
+            </div>
+            <br>
+            <div class="api-block api-returns">
+                <span class="api-return">returns</span> the pointer to the <span class="api-customtype">VSPFilter</span>
+                <br><span class="api-define">NULL</span> on failure
+            </div>
+            
+
+            <h3><span class="fn"><span class="api-type">void</span>
+                 <span class="api-fn">filterNewBoolParameter</span>
+                  (<span class="api-customtype">VSPFilter*</span> filter, 
+                   <span class="api-type">const char*</span> name,
+                   <span class="api-type">bool</span> defaultValue)</span>
+            </h3>
+            <p>
+                Adds a boolean [ON/OFF] parameter to a filter.
+                <br>This parameter will be configurable with a checkbox when the filter is selected.
+                <br><br>The value can then be retrieved with <span class="api-fn">filterGetBoolValue</span> inside the filter function.
+            </p>
+            <div class="api-block api-params">
+                <span class="api-param">filter</span>: the filter to add the parameter to<br>
+                <span class="api-param">name</span>: the name of the parameter<br>
+                <span class="api-param">defaultValue</span>: the default value of the parameter
+            </div>
+            
+
+            <h3><span class="fn"><span class="api-type">void</span>
+                 <span class="api-fn">filterNewIntParameter</span>
+                  (<span class="api-customtype">VSPFilter*</span> filter, 
+                   <span class="api-type">const char*</span> name,
+                   <span class="api-type">int</span> minValue,
+                   <span class="api-type">int</span> maxValue,
+                   <span class="api-type">int</span> defaultValue)</span>
+            </h3>
+            <p>
+                Adds a integer [whole number] parameter to a filter.
+                <br>This parameter will be configurable with a slider when the filter is selected.
+                <br><br>The value can then be retrieved with <span class="api-fn">filterGetIntValue</span> inside the filter function.
+            </p>
+            <div class="api-block api-params">
+                <span class="api-param">filter</span>: the filter to add the parameter to<br>
+                <span class="api-param">name</span>: the name of the parameter<br>
+                <span class="api-param">minValue</span>: the minimum value of the parameter<br>
+                <span class="api-param">maxValue</span>: the maximum value of the parameter<br>
+                <span class="api-param">defaultValue</span>: the default value of the parameter
+            </div>
+            
+
+            <h3><span class="fn"><span class="api-type">void</span>
+                 <span class="api-fn">filterNewDoubleParameter</span>
+                  (<span class="api-customtype">VSPFilter*</span> filter, 
+                   <span class="api-type">const char*</span> name,
+                   <span class="api-type">double</span> minValue,
+                   <span class="api-type">double</span> maxValue,
+                   <span class="api-type">double</span> defaultValue)</span>
+            </h3>
+            <p>
+                Adds a double [floating point number] parameter to a filter.
+                <br>This parameter will be configurable with a slider when the filter is selected.
+                <br><br>The value can then be retrieved with <span class="api-fn">filterGetDoubleValue</span> inside the filter function.
+            </p>
+            <div class="api-block api-params">
+                <span class="api-param">filter</span>: the filter to add the parameter to<br>
+                <span class="api-param">name</span>: the name of the parameter<br>
+                <span class="api-param">minValue</span>: the minimum value of the parameter<br>
+                <span class="api-param">maxValue</span>: the maximum value of the parameter<br>
+                <span class="api-param">defaultValue</span>: the default value of the parameter
+            </div>
+            
+
+            <h3><span class="fn"><span class="api-type">void</span>
+                 <span class="api-fn">filterNewDoubleRangeParameter</span>
+                  (<span class="api-customtype">VSPFilter*</span> filter, 
+                   <span class="api-type">const char*</span> name,
+                   <span class="api-type">double</span> minValue,
+                   <span class="api-type">double</span> maxValue,
+                   <br>
+                   <span class="api-type">double</span> defaultValueLow,
+                   <span class="api-type">double</span> defaultValueHigh,
+                   <span class="api-type">uint32</span> color)</span>
+            </h3>
+            <p>
+                Adds a number range parameter to a filter.
+                <br>This parameter will be configurable with a range slider when the filter is selected.
+                <br><br>The value can then be retrieved with <span class="api-fn">filterGetRangeValue1</span> and <span class="api-fn">filterGetRangeValue2</span> inside the filter function.
+            </p>
+            <div class="api-block api-params">
+                <span class="api-param">filter</span>: the filter to add the parameter to<br>
+                <span class="api-param">name</span>: the name of the parameter<br>
+                <span class="api-param">minValue</span>: the minimum value of the parameter<br>
+                <span class="api-param">maxValue</span>: the maximum value of the parameter<br>
+                <span class="api-param">defaultValueLow</span>: the default lower value of the parameter<br>
+                <span class="api-param">defaultValueHigh</span>: the default higher value of the parameter<br>
+                <span class="api-param">color</span>: the color of the slider of the range in 0xAARRGGBB format
+            </div>
+
+
+            <h3><span class="fn"><span class="api-type">bool</span>
+                 <span class="api-fn">filterGetBoolValue</span>
+                  (<span class="api-customtype">VSPFilter*</span> filter, 
+                   <span class="api-type">const char*</span> name)</span>
+            </h3>
+            <p>
+                Gets the value of a boolean parameter.
+            </p>
+            <div class="api-block api-params">
+                <span class="api-param">filter</span>: the filter to query<br>
+                <span class="api-param">name</span>: the name of the parameter
+            </div>
+            <br>
+            <div class="api-block api-returns">
+                <span class="api-return">returns</span> the value of the parameter
+                <br>false if the filter is <span class="api-define">NULL</span> or the parameter is not found
+            </div>
+
+
+            <h3><span class="fn"><span class="api-type">int</span>
+                 <span class="api-fn">filterGetIntValue</span>
+                  (<span class="api-customtype">VSPFilter*</span> filter, 
+                   <span class="api-type">const char*</span> name)</span>
+            </h3>
+            <p>
+                Gets the value of an integer parameter.
+            </p>
+            <div class="api-block api-params">
+                <span class="api-param">filter</span>: the filter to query<br>
+                <span class="api-param">name</span>: the name of the parameter
+            </div>
+            <br>
+            <div class="api-block api-returns">
+                <span class="api-return">returns</span> the value of the parameter
+                <br>0 if the filter is <span class="api-define">NULL</span> or the parameter is not found
+            </div>
+
+
+            <h3><span class="fn"><span class="api-type">double</span>
+                 <span class="api-fn">filterGetDoubleValue</span>
+                  (<span class="api-customtype">VSPFilter*</span> filter, 
+                   <span class="api-type">const char*</span> name)</span>
+            </h3>
+            <p>
+                Gets the value of a double parameter.
+            </p>
+            <div class="api-block api-params">
+                <span class="api-param">filter</span>: the filter to query<br>
+                <span class="api-param">name</span>: the name of the parameter
+            </div>
+            <br>
+            <div class="api-block api-returns">
+                <span class="api-return">returns</span> the value of the parameter
+                <br>0.0 if the filter is <span class="api-define">NULL</span> or the parameter is not found
+            </div>
+
+
+            <h3><span class="fn"><span class="api-type">double</span>
+                 <span class="api-fn">filterGetRangeValue1</span>
+                  (<span class="api-customtype">VSPFilter*</span> filter, 
+                   <span class="api-type">const char*</span> name)</span>
+            </h3>
+            <p>
+                Gets the lower value of a range parameter.
+            </p>
+            <div class="api-block api-params">
+                <span class="api-param">filter</span>: the filter to query<br>
+                <span class="api-param">name</span>: the name of the parameter
+            </div>
+            <br>
+            <div class="api-block api-returns">
+                <span class="api-return">returns</span> the lower value of the parameter
+                <br>0.0 if the filter is <span class="api-define">NULL</span> or the parameter is not found
+            </div>
+
+
+            <h3><span class="fn"><span class="api-type">double</span>
+                 <span class="api-fn">filterGetRangeValue2</span>
+                  (<span class="api-customtype">VSPFilter*</span> filter, 
+                   <span class="api-type">const char*</span> name)</span>
+            </h3>
+            <p>
+                Gets the higher value of a range parameter.
+            </p>
+            <div class="api-block api-params">
+                <span class="api-param">filter</span>: the filter to query<br>
+                <span class="api-param">name</span>: the name of the parameter
+            </div>
+            <br>
+            <div class="api-block api-returns">
+                <span class="api-return">returns</span> the higher value of the parameter
+                <br>0.0 if the filter is <span class="api-define">NULL</span> or the parameter is not found
+            </div>
+        </div>
+    </body>
+</html>

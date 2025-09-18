@@ -161,6 +161,12 @@ li {
 .sidebar .sublink-level-1 {
     padding: 8px 16px;
 }
+.sidebar .sublink-level-2 {
+    padding: 4px 16px;
+}
+.sidebar .sublink-level-3 {
+    padding: 3px 16px;
+}
 
 .sidebar .redlink {
     background: linear-gradient(90deg, #302020, #0a0000, #0a0000, #0a0000, #201010);
@@ -406,4 +412,61 @@ div.content {
     background: linear-gradient(-45deg, rgba(157, 227, 255, 0), rgba(157, 227, 255, 0.063), rgba(157, 227, 255, 0.125), rgba(157, 227, 255, 0.627));
     border-right: 1px solid #dbefff;
     border-bottom: 1px solid #dbefff;
+}
+
+.hljs {
+    background: transparent;
+    color: white;
+}
+
+.fn {
+    font-family: monospace;
+}
+
+.api-customtype {
+    color: lightgreen;
+    font-family: monospace;
+}
+
+.api-fn {
+    color: lightyellow;
+    font-family: monospace;
+}
+
+.api-type {
+    color: lightblue;
+    font-family: monospace;
+}
+.api-define {
+    color: lightpink;
+    font-family: monospace;
+}
+
+.api-block {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 1em;
+    margin-left: 2em;
+    
+    animation-duration: 0.8s;
+    animation-name: slidein-3;
+}
+.api-params {
+    background: linear-gradient(90deg, #ffa6002a, #ffa60000);
+    border-left: 1px solid orange;
+}
+.api-param {
+    font-family: monospace;
+    font-size: 1.2em;
+    color: orange;
+}
+
+.api-returns {
+    background: linear-gradient(90deg, #00b7ff2a, #00b7ff00);
+    border-left: 1px solid lightblue;
+}
+.api-return {
+    font-family: monospace;
+    font-size: 1.2em;
+    color: lightblue;
 }

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/default.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/c.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/cpp.min.js"></script>
+
+        <script>hljs.highlightAll();</script>
+
+        <link rel="stylesheet" type="text/css" href="../style.css">
+        <script src="singlepage.js"></script>
+        <meta charset="UTF-8">
+    </head>
+    <body onload="checkIframe()">
+        <div class="manual-body">
+            <h1>◆Native plugin API reference</h1>
+            <div class="block-warning">
+                This API is still in development and may change.
+            </div>
+
+            <h2>◆Layer functions</h2>
+            
+            <h3><span class="fn"><span class="api-customtype">VSPLayer*</span>
+                 <span class="api-fn">layerAllocNew</span>
+                  (<span class="api-type">int</span> type, 
+                   <span class="api-type">int</span> width, 
+                   <span class="api-type">int</span> height)</span>
+            </h3>
+            <p>
+                Allocates a new layer of the specified type and dimensions.
+            </p>
+            <div class="api-block api-params">
+                <span class="api-param">type</span>: must be either <span class="api-define">VSP_LAYER_RGBA</span> or <span class="api-define">VSP_LAYER_INDEXED</span><br>
+                <span class="api-param">width</span>: the width of the layer<br>
+                <span class="api-param">height</span>: the height of the layer
+            </div>
+            <br>
+            <div class="api-block api-returns">
+                <span class="api-return">returns</span> the pointer to the <span class="api-customtype">VSPLayer</span>
+                <br><span class="api-define">NULL</span> on failure
+            </div>
+
+
+            <h3><span class="fn"><span class="api-type">void</span>
+                 <span class="api-fn">layerFree</span>
+                  (<span class="api-customtype">VSPLayer*</span> layer)</span>
+            </h3>
+            <p>
+                Frees a layer previously allocated with <span class="api-fn">layerAllocNew</span>.
+            </p>
+            <div class="api-block api-params">
+                <span class="api-param">layer</span>: the layer to free
+            </div>
+            
+            
+            <h3><span class="fn"><span class="api-type">VSPLayerInfo*</span>
+                 <span class="api-fn">layerGetInfo</span>
+                  (<span class="api-customtype">VSPLayer*</span> layer)</span>
+            </h3>
+            <p>
+                Gets information about a layer.
+                <br><br>This pointer needs to be freed with <span class="api-fn">util_free</span> after use.
+            </p>
+            <div class="api-block api-params">
+                <span class="api-param">layer</span>: the layer to query
+            </div>
+            <br>
+            <div class="api-block api-returns">
+                <span class="api-return">returns</span> a pointer to a <span class="api-customtype">VSPLayerInfo</span> struct
+                <br><span class="api-define">NULL</span> if the layer is <span class="api-define">NULL</span>
+            </div>
+
+
+            <h3><span class="fn"><span class="api-type">void</span>
+                 <span class="api-fn">layerSetPixel</span>
+                  (<span class="api-customtype">VSPLayer*</span> layer,
+                   <span class="api-type">int</span> x,
+                   <span class="api-type">int</span> y,
+                   <span class="api-type">uint32</span> color)</span>
+            </h3>
+            <p>
+                Sets the pixel at the specified coordinates to the specified color.
+                <br>For RGBA layers, the color is in 0xAARRGGBB format.
+                <br>For indexed layers, the color is the palette index.
+            </p>
+            <div class="api-block api-params">
+                <span class="api-param">layer</span>: the layer to modify<br>
+                <span class="api-param">x</span>: the X coordinate of the pixel<br>
+                <span class="api-param">y</span>: the Y coordinate of the pixel<br>
+                <span class="api-param">color</span>: the color to set the pixel to
+            </div>
+
+
+            <h3><span class="fn"><span class="api-type">uint32</span>
+                 <span class="api-fn">layerGetPixel</span>
+                  (<span class="api-customtype">VSPLayer*</span> layer,
+                   <span class="api-type">int</span> x,
+                   <span class="api-type">int</span> y)</span>
+            </h3>
+            <p>
+                Gets the color of the pixel at the specified coordinates.
+                <br>For RGBA layers, the color is in 0xAARRGGBB format.
+                <br>For indexed layers, the color is the palette index, or 0xFFFFFFFF (-1) for no color.
+            </p>
+            <div class="api-block api-params">
+                <span class="api-param">layer</span>: the layer to query<br>
+                <span class="api-param">x</span>: the X coordinate of the pixel<br>
+                <span class="api-param">y</span>: the Y coordinate of the pixel
+            </div>
+            <br>
+            <div class="api-block api-returns">
+                <span class="api-return">returns</span> the color of the pixel
+                <br>0 if the layer is <span class="api-define">NULL</span> or coordinates are out of bounds
+            </div>
+
+
+            <h3><span class="fn"><span class="api-type">uint32*</span>
+                 <span class="api-fn">layerGetRawPixelData</span>
+                  (<span class="api-customtype">VSPLayer*</span> layer)</span>
+            </h3>
+            <p>
+                Gets a pointer to the raw pixel data of the layer.
+                <br>For RGBA layers, the data is an array of 32-bit colors in 0xAARRGGBB format.
+                <br>For indexed layers, the data is an array of 32-bit palette indices.
+                <br><br>This pointer is managed by voidsprite and should not be freed from plugin code.
+            </p>
+            <div class="api-block api-params">
+                <span class="api-param">layer</span>: the layer to query
+            </div>
+            <br>
+            <div class="api-block api-returns">
+                <span class="api-return">returns</span> a pointer to the raw pixel data
+                <br><span class="api-define">NULL</span> if the layer is <span class="api-define">NULL</span>
+            </div>
+        </div>
+    </body>
+</html>
