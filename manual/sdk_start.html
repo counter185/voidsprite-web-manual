@@ -71,8 +71,14 @@
                 The latest version of it can be downloaded here: <a target="_blank" href="https://nightly.link/counter185/voidsprite/workflows/msbuild/main">https://nightly.link/counter185/voidsprite/workflows/msbuild/main</a>
                 <br><br>
                 Copy this header file to your project to the same directory as your <code>main.cpp</code> file.
+            </p>
+            <div class="block-hint">
+                In Visual Studio projects, the main source file will be called <code>dllmain.cpp</code>.
+                <br>This file will already contain some starter DLL code, you can ignore it.
+            </div>
+            <p>
                 <br>
-                In <code>main.cpp</code>, add the following code after copying the SDK header file:
+                In <code>main.cpp</code>, add the following code:
             </p>
             <pre><code class="codeblock language-cpp">
 #include "voidsprite_sdk.h"
@@ -99,7 +105,7 @@ const char* getPluginAuthors() {
 }
             </code></pre>
             <p>
-                With this code, your project can now build a valid voidsprite plugin that will load when placed in the <code>plugins</code> directory in the <a class="manual-link" href="appdata.html?back=sdk_start">Application data directory</a>.
+                With this code, you can now build a valid voidsprite plugin that will load when placed in the <code>plugins</code> directory in the <a class="manual-link" href="appdata.html?back=sdk_start">Application data directory</a>.
                 <img class="img-realpx" src="img/sdk_start.png">
             </p>
         </div>
