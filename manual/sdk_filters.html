@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/default.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/cpp.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/bash.min.js"></script>
+        
+        <script>hljs.highlightAll();</script>
+
+        <link rel="stylesheet" type="text/css" href="../style.css">
+        <script src="singlepage.js"></script>
+        <meta charset="UTF-8">
+    </head>
+    <body onload="checkIframe()">
+        <div class="manual-body">
+            <h1>◆voidsprite plugin SDK: creating a custom filter</h1>
+            <p>
+                This page will guide you through creating a custom voidsprite filter in your plugin.
+                <br>You will need to have a working setup for building a plugin as described on the <a class="manual-link" href="sdk_start.html?back=sdk_filters">Get started</a> page.
+                <div class="block-hint">
+                    <ul>
+                        <li>Filters can only be used in RGB mode, so you can skip checking for indexed mode in your code.</li>
+                        <li>Filters will automatically only apply to the area selected by the user, if there is one.</li>
+                    </ul>
+                </div>
+            </p>
+
+            <h2>◆Writing the filter function</h2>
+            <p>
+                You need to create a function that voidsprite will call when applying your filter.
+                <br>This function must return <code>void</code> and take <code>VSPLayer*</code> and <code>VSPFilter*</code> as parameters.
+                <br>In this example, we will create a filter that inverts the colors of the image.
+            </p>
+            <pre><code class="codeblock language-cpp">
+void invertFilter(VSPLayer* layer, VSPFilter* filter) {
+    //This is where we will manipulate the layer's pixels
+}
+            </code></pre>
+            <p>
+                We will get the layer dimensions and iterate over all pixels to invert them.
+                <br>We will then free the layer info pointer.
+            </p>
+            <pre><code class="codeblock language-cpp">void invertFilter(VSPLayer* layer, VSPFilter* filter) {
+     VSPLayerInfo* info = vsp->layerGetInfo(layer);
+
+     //Iterate over every pixel
+     for (int y = 0; y < info->height; y++) {
+        for (int x = 0; x < info->width; x++) {
+            //Get the current pixel
+            uint32_t pixel = vsp->layerGetPixel(layer, x, y);
+
+            //Invert the color preserving the alpha channel
+            uint8_t alpha = (pixel >> 24) & 0xFF;
+            uint32_t invertedPixel = 0xFFFFFFFF - pixel;
+            invertedPixel = (alpha << 24) | (invertedPixel & 0xFFFFFF);
+
+            //Set the pixel
+            vsp->layerSetPixel(layer, x, y, invertedPixel);
+        }
+    }
+
+     vsp->util_free(info);
+}</code></pre>
+
+            <div class="block-hint">
+                While you can use the <code>layerGetRawPixelData</code> function to manipulate the RGBA data directly,
+                <br>less experienced users should use <code>layerGetPixel</code> and <code>layerSetPixel</code> as they are less prone to error,
+                <br>such as writing out of bounds of the array.
+            </div>
+
+            <h2>◆Registering the filter</h2>
+            <p>
+                After writing your filter function, you need to register it with voidsprite.
+                <br>This is done by calling <code>registerFilter</code> in your plugin's <code>pluginInit</code> function.
+            </p>
+            <pre><code class="codeblock language-cpp">void pluginInit(voidspriteSDK* sdk) {
+    vsp = sdk;
+    //...
+    VSPFilter* filter = vsp->registerFilter("Invert colors", invertFilter);
+    //...
+}</code></pre>
+            <p>
+                Compile your plugin, install it, and your filter should now be available in voidsprite under the <span class="navbar-hint">Filters</span> section on the navigation bar.
+                <img class="img-realpx" src="img/sdk_filter1.png">
+            </p>
+
+            <h2>◆Adding configurable parameters</h2>
+            <p>
+                The SDK allows you to add configurable parameters to your filter, which will be shown in the filter settings dialog when the user selects your filter.
+                <br>In this example, we will add a parameter to control if alpha should be inverted as well.
+                <br><br>To do this, we will use <code>filterNewBoolParameter</code> to add a boolean parameter to our filter.
+            </p>
+            <pre><code class="codeblock language-cpp">void pluginInit(voidspriteSDK* sdk) {
+    vsp = sdk;
+    //...
+    VSPFilter* filter = vsp->registerFilter("Invert colors", invertFilter);
+    vsp->filterNewBoolParameter(filter, "Preserve alpha", true);
+    //...
+}</code></pre>
+            
+            <p>
+                <img class="img-realpx" src="img/sdk_filter2.png">
+                <br><br>
+                To get the value of this parameter in our filter, we will use <code>filterGetBoolValue</code>.
+            </p>
+            <pre><code class="codeblock language-cpp">void invertFilter(VSPLayer* layer, VSPFilter* filter) {
+     VSPLayerInfo* info = vsp->layerGetInfo(layer);
+
+     //Get the value of the "Preserve alpha" parameter
+     bool preserveAlpha = vsp->filterGetBoolValue(filter, "Preserve alpha");
+
+     //Iterate over every pixel
+     for (int y = 0; y < info->height; y++) {
+        for (int x = 0; x < info->width; x++) {
+            //Get the current pixel
+            uint32_t pixel = vsp->layerGetPixel(layer, x, y);
+
+            //Invert the color preserving the alpha channel if the parameter is set
+            uint8_t alpha = (pixel >> 24) & 0xFF;
+            uint32_t invertedPixel = 0xFFFFFFFF - pixel;
+            if (preserveAlpha) {
+                invertedPixel = (alpha << 24) | (invertedPixel & 0xFFFFFF);
+            }
+
+            //Set the pixel
+            vsp->layerSetPixel(layer, x, y, invertedPixel);
+        }
+    }
+
+     vsp->util_free(info);
+}</code></pre>
+            <p>
+                Rebuild your plugin, and your filter will now have a checkbox to preserve alpha, which should work as expected.
+            </p>
+        </div>
+    </body>
+</html>

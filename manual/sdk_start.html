@@ -32,7 +32,7 @@
 
             <h3><span class="platform platform-windows">Windows: Visual Studio 2017-2022</span></h3>
             <p>
-                In Visual Studio, create a new project, switch the project type to C++ and select "Dynamic Link Library (DLL)".
+                In Visual Studio, create a new project, switch the project type to C++ and select the "Dynamic Link Library (DLL)" preset.
                 <br><br>
                 Users running your plugin will need to have the Visual C++ Redistributable installed, which is already required for voidsprite.
                 <br><br>
@@ -80,8 +80,7 @@
                 <br>
                 In <code>main.cpp</code>, add the following code:
             </p>
-            <pre><code class="codeblock language-cpp">
-#include "voidsprite_sdk.h"
+            <pre><code class="codeblock language-cpp">#include "voidsprite_sdk.h"
 
 voidspriteSDK* vsp = nullptr;
 
@@ -102,8 +101,7 @@ const char* getPluginDescription() {
 }
 const char* getPluginAuthors() {
     return "Author name(s)";
-}
-            </code></pre>
+}</code></pre>
             <p>
                 With this code, you can now build a valid voidsprite plugin that will load when placed in the <code>plugins</code> directory in the <a class="manual-link" href="appdata.html?back=sdk_start">Application data directory</a>.
                 <img class="img-realpx" src="img/sdk_start.png">

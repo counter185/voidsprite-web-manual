@@ -40,7 +40,7 @@ links = [
             ] },
             { name: "Get started", url: "manual/sdk_start.html", subpages: [] },
             { name: "Custom file importers", url: "manual/under_construction.html", subpages: [] },
-            { name: "Custom filters", url: "manual/under_construction.html", subpages: [] },
+            { name: "Custom filters", url: "manual/sdk_filters.html", subpages: [] },
             { name: "Custom brushes", url: "manual/under_construction.html", subpages: [] },
         ] }
     ] },
