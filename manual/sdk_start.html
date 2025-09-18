@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/default.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/cpp.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/bash.min.js"></script>
+        
+        <script>hljs.highlightAll();</script>
+
+        <link rel="stylesheet" type="text/css" href="../style.css">
+        <script src="singlepage.js"></script>
+        <meta charset="UTF-8">
+    </head>
+    <body onload="checkIframe()">
+        <div class="manual-body">
+            <h1>◆voidsprite plugin SDK: getting started</h1>
+            <p>
+                This page will guide you through setting up a development environment for creating native plugins for voidsprite.
+            </p>
+
+            <h2>◆Building a native library</h2>
+            <p>
+                First, you must create a C++ project that builds a shared library, meaning on Windows it will build a .dll file, on Linux a .so file, and on macOS a .dylib file.
+                <br><br>
+            </p>
+
+            <h3><span class="platform platform-windows">Windows: Visual Studio 2017-2022</span></h3>
+            <p>
+                In Visual Studio, create a new project, switch the project type to C++ and select "Dynamic Link Library (DLL)".
+                <br><br>
+                Users running your plugin will need to have the Visual C++ Redistributable installed, which is already required for voidsprite.
+                <br><br>
+                To build the project, select <span class="navbar-hint">Build</span> &gt; <span class="navbar-hint">Build Solution</span>.
+            </p>
+            <div class="block-warning">
+                When distributing your plugin, make sure to build it in Release mode and for the x64 architecture.
+                <br>
+                Plugins built in Debug mode require the debug runtime, which only comes with a full install of Visual Studio.
+                <br><br>
+                If you get errors for the following missing DLLs:
+                <br>
+                VCRUNTIME140D.dll,  MSVCP140D.dll or similar ending with "D"
+                <br>this is why.
+            </div>
+
+            <h3>g++</h3>
+            <p>
+                To build a shared library with g++, use the following command:
+            </p>
+            <pre><code class="codeblock language-bash">g++ -shared -o output.dll source_file.cpp</code></pre>
+            <p>
+                Replace <code>.dll</code> with the appropriate extension for your target platform.
+            </p>
+            <ul>
+                <li><span class="platform platform-windows">Windows:</span> <code>.dll</code></li>
+                <li><span class="platform platform-linux">Linux:</span> <code>.so</code></li>
+                <li><span class="platform platform-mac">macOS:</span> <code>.dylib</code></li>
+            </ul>
+
+
+            <h2>◆Setting up main.cpp</h2>
+            <p>
+                The voidsprite SDK is a single-header library, meaning you only need to include it in your source file to start using it.
+                <br><br>
+                The latest version of it can be downloaded here: <a target="_blank" href="https://nightly.link/counter185/voidsprite/workflows/msbuild/main">https://nightly.link/counter185/voidsprite/workflows/msbuild/main</a>
+                <br><br>
+                Copy this header file to your project to the same directory as your <code>main.cpp</code> file.
+                <br>
+                In <code>main.cpp</code>, add the following code after copying the SDK header file:
+            </p>
+            <pre><code class="codeblock language-cpp">
+#include "voidsprite_sdk.h"
+
+voidspriteSDK* vsp = nullptr;
+
+void pluginInit(voidspriteSDK* sdk) {
+    vsp = sdk;
+    //Your initialization code goes here.
+    //This is where you register all components of your plugin,
+    //such as filters, brushes, etc.
+}
+const char* getPluginName() {
+    return "Your plugin name";
+}
+const char* getPluginVersion() {
+    return "1.0";
+}
+const char* getPluginDescription() {
+    return "Your plugin description";
+}
+const char* getPluginAuthors() {
+    return "Author name(s)";
+}
+            </code></pre>
+            <p>
+                With this code, your project can now build a valid voidsprite plugin that will load when placed in the <code>plugins</code> directory in the <a class="manual-link" href="appdata.html?back=sdk_start">Application data directory</a>.
+                <img class="img-realpx" src="img/sdk_start.png">
+            </p>
+        </div>
+    </body>
+</html>

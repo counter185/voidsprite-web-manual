@@ -470,3 +470,12 @@ div.content {
     font-size: 1.2em;
     color: lightblue;
 }
+
+.codeblock {
+    border: 1px solid #202020;
+    background: linear-gradient(90deg, #20202040, #00000000);
+    width: fit-content;
+    animation-duration: 0.8s;
+    animation-name: slidein-3;
+    margin-left: 2em;
+}

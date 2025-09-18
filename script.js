@@ -38,7 +38,7 @@ links = [
                 { name: "Layer functions", url: "manual/api_layers.html", subpages: [] },
                 { name: "Editor functions", url: "manual/under_construction.html", subpages: [] },
             ] },
-            { name: "Get started", url: "manual/under_construction.html", subpages: [] },
+            { name: "Get started", url: "manual/sdk_start.html", subpages: [] },
             { name: "Custom file importers", url: "manual/under_construction.html", subpages: [] },
             { name: "Custom filters", url: "manual/under_construction.html", subpages: [] },
             { name: "Custom brushes", url: "manual/under_construction.html", subpages: [] },
