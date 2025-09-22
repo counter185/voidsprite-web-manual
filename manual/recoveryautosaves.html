@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" type="text/css" href="../style.css">
+        <script src="singlepage.js"></script>
+        <meta charset="UTF-8">
+    </head>
+    <body onload="checkIframe()">
+        <div class="manual-body">
+            <h1>◆Recovery autosaves</h1>
+            <p>
+                voidsprite can automatically create periodic backups of your projects, known as Recovery autosaves.
+            </p>
+
+            <h2>◆Creating Recovery autosaves</h2>
+
+            <h3>◆Automatic autosaves</h3>
+            <p>
+                A Recovery autosave will be created when there are unsaved changes and a set time interval has passed.
+                <br>
+                This time interval is set to 20 minutes by default and can be changed or disabled in Preferences.
+            </p>
+
+            <h3>◆Manual autosaves</h3>
+            <p>
+                A Recovery autosave can also be manually triggered with <span class="navbar-hint">File</span> &gt; <span class="navbar-hint">Force recovery autosave</span> on the navigation bar, or the <span class="key-hint">Force recovery autosave</span> keybind (default: <span class="key-hint">Ctrl+Shift+R</span>).
+            </p>
+
+            <h2>◆Accessing Recovery autosaves</h2>
+            <p>
+                From the <a class="manual-link" href="launchpad.html?back=recoveryautosaves">voidsprite Launchpad</a>, select
+                <span class="navbar-hint">File</span> &gt; <span class="navbar-hint">Recovery autosaves</span> on the navigation bar.
+                <br>
+                This will open a list of all Recovery autosaves that have been created. Click on one to open it in a new workspace.
+                <br><br>
+                These saved files can also be accessed directly from the <b>autosaves/</b> folder in the <a class="manual-link" href="appdata.html?back=recoveryautosaves">Application data directory</a>.
+            </p>
+        </div>
+    </body>
+</html>

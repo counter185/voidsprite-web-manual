@@ -37,11 +37,9 @@
                 <br>This function must return <code>void</code> and take <code>VSPLayer*</code> and <code>VSPFilter*</code> as parameters.
                 <br>In this example, we will create a filter that inverts the colors of the image.
             </p>
-            <pre><code class="codeblock language-cpp">
-void invertFilter(VSPLayer* layer, VSPFilter* filter) {
+            <pre><code class="codeblock language-cpp">void invertFilter(VSPLayer* layer, VSPFilter* filter) {
     //This is where we will manipulate the layer's pixels
-}
-            </code></pre>
+}</code></pre>
             <p>
                 We will get the layer dimensions and iterate over all pixels to invert them.
                 <br>We will then free the layer info pointer.

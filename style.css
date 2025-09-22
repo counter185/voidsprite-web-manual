@@ -427,19 +427,33 @@ div.content {
     color: lightgreen;
     font-family: monospace;
 }
+.hljs-built_in {
+    color: lightgreen;
+}
 
 .api-fn {
     color: lightyellow;
     font-family: monospace;
+}
+.hljs-title {
+    color: lightyellow;
 }
 
 .api-type {
     color: lightblue;
     font-family: monospace;
 }
+.hljs-type {
+    color: lightblue;
+}
+
 .api-define {
     color: lightpink;
     font-family: monospace;
+}
+
+.hljs-number {
+    color: orange;
 }
 
 .api-block {
