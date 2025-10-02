@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/default.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/json.min.js"></script>
+
+        <script>hljs.highlightAll();</script>
+
+        <link rel="stylesheet" type="text/css" href="../style.css">
+        <script src="singlepage.js"></script>
+        <meta charset="UTF-8">
+    </head>
+    <body onload="checkIframe()">
+        <div class="manual-body">
+            <h1>◆Visual configurations</h1>
+            <p>Visual configurations let you change the appearance of voidsprite.</p>
+
+            <h2>◆Install a visual configuration</h2>
+            <p>
+                To install an already prepared visual configuration, copy its folder into the <b>visualconfigs/</b> directory inside the <a class="manual-link" href="appdata.html?back=themes">Application data directory</a>.
+                <br><br>It should then be selectable in <span class="navbar-hint">File</span> &gt; <span class="navbar-hint">Preferences</span> &gt; <span class="vsp-button">Visual</span> &gt; <span class="vsp-button">Visual configuration</span>.
+            </p>
+
+            <h2>◆Create a visual configuration</h2>
+            <p>
+                A visual configuration folder should contain a file named <b>config.json</b>. This file needs to be a JSON containing keys and values that define the appearance. 
+                <br>A sample file with all possible configurable values for the current version is generated automatically when voidsprite is launched and is saved to <b>visualconfigs/sample_config.json</b>, you may copy it and modify to create your own theme.
+                <br><br>All color values in the config file must be in hexadecimal <code>AARRGGBB</code> format.
+            </p>
+
+            <h3>◆Fill values</h3>
+            <p>
+                Values starting with <code>fill:</code> can have the following formats:
+                <ul>
+                    <li><code>fill:solid:[color]</code> - solid color fill</li>
+                    <li><code>fill:gradient:[color_top_left]/[color_top_right]/[color_bottom_left]/[color_bottom_right]</code> - gradient fill</li>
+                    <li><code>fill:texture:[file_name]</code> - texture fill</li>
+                </ul>
+            </p>
+
+            <h3>◆Replacing assets</h3>
+            <p>
+                Default assets such as icons can be replaced by placing them in your visual configuration's folder.
+                <br>The file names must match original ones, for example to replace the <b>notif_success.png</b> icon, place a file with the same name in your visual configuration folder.
+            </p>
+
+            <h3>◆Changing the font</h3>
+            <p>
+                To change the main font, place its TTF file inside the visual configuration folder.
+                <br>Then, in the <b>config.json</b> file, set the <code>general/font</code> key to the name of your font file.
+            </p>
+
+            <pre><code class="codeblock language-json">{
+    "general": {
+        "font": "font-file.ttf"
+    },
+    //...
+}</code></pre>
+
+        </div>
+    </body>
+</html>

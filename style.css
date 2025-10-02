@@ -430,6 +430,9 @@ div.content {
 .hljs-built_in {
     color: lightgreen;
 }
+.hljs-string {
+    color: orange;
+}
 
 .api-fn {
     color: lightyellow;

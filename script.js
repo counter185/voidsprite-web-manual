@@ -26,6 +26,7 @@ links = [
     { name: "Multiple windows", url: "manual/under_construction.html", subpages: [] },
     { name: "Settings", url: "manual/under_construction.html", subpages: [
         { name: "Application data directory", url: "manual/appdata.html", subpages: [] },
+        { name: "Visual configuration (themes)", url: "manual/themes.html", subpages: [] },
     ] },
     { name: "Advanced features", url: "manual/advancedintro.html", subpages: [
         { name: "Data extractor", url: "manual/under_construction.html", subpages: [] },
