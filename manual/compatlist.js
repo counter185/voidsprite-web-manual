@@ -60,6 +60,9 @@ compatListTargets = [
         {name: "Wii/GameCube TPL", ext: ".tpl", import: "~", export: "-",
             notes: "only I4, RGB5A3, RGBA32"
         },
+        {name: "IW Engine IWI", ext: ".iwi", import: "~", export: "-",
+            notes: "only DXT1, DXT3, DXT5 and ARGB32"
+        },
         {name: "Windows 1.0/2.0/3.11 Paint", ext: ".msp", import: "?", export: "-"},
         {name: "PS Vita GXT", ext: ".gxt", import: "?", export: "-"},
         {name: "PSP/PS3 GIM", ext: ".gim", import: "?", export: "-"},
