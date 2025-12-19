@@ -67,6 +67,7 @@ compatListTargets = [
         {name: "PS Vita GXT", ext: ".gxt", import: "?", export: "-"},
         {name: "PSP/PS3 GIM", ext: ".gim", import: "?", export: "-"},
         {name: "Nintendo 3DS app icon", ext: ".cxi", import: "?", export: "-"},
+        {name: "XNA XNB", ext: ".xnb", import: "?", export: "-"},
         {name: "Every other SDL_Image format", ext: "*", import: "+", export: "-"},
     ]
 },
