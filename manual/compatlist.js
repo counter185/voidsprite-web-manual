@@ -19,7 +19,6 @@ compatListTargets = [
         {name: "Pixel Studio session", ext: ".psp", import: "~", export: "+",
             notes: "a 1:1 read of this format requires accurately implementing every tool from that program."
                     + "<br>For the best experience, wipe the undo history before attempting an import (Functions -> Resize canvas -> Resize -> Yes)."
-                    + "<br>Animation features are not supported." 
         },
         {name: "Pixel Studio session<br>(compressed)", ext: ".psx", import: "~", export: "+"},
         {name: "XYZ (RPG Maker 2000/2003)", ext: ".xyz", import: "+", export: "+"},
@@ -31,8 +30,8 @@ compatListTargets = [
             notes: "no mipmaps are imported or exported."
                     + "<br>Formats: I8, IA88, A8, RGB565,BGR888,RGB888, BGRA8888, RGBA8888, ARGB8888, ABGR8888, DXT1, DXT3, DXT5"
         },
-        {name: "Aseprite session", ext: ".aseprite", import: "~", export: "+",
-            notes: "experimental. Only frame 1 is loaded. Layer blend modes and tilemaps are not available here."
+        {name: "Aseprite session", ext: ".aseprite", import: "+", export: "+",
+            notes: "Layer blend modes and tilemaps are not available here."
         },
         {name: "Piskel", ext: ".piskel", import: "~", export: "+"},
         {name: "Lospec Pixel Editor", ext: ".lpe", import: "+", export: "+"},
@@ -50,6 +49,7 @@ compatListTargets = [
         {name: "Pixilart session", ext: ".pixil", import: "+", export: "-", 
             notes: "animations and filters not supported [only frame 1 is imported]"
         },
+        {name: "Flipnote Studio (DSi)", ext: ".ppm", import: "+", export: "-"},
         {name: "Atrophy Engine texture", ext: ".aetex", import: "~", export: "-",
             notes: "GXT and Switch ASTC subformats not implemented"
         },
@@ -63,6 +63,7 @@ compatListTargets = [
         {name: "IW Engine IWI", ext: ".iwi", import: "~", export: "-",
             notes: "only DXT1, DXT3, DXT5 and ARGB32"
         },
+        {name: "GoldSrc SPR", ext: ".spr", import: "+", export: "-"},
         {name: "Windows 1.0/2.0/3.11 Paint", ext: ".msp", import: "?", export: "-"},
         {name: "PS Vita GXT", ext: ".gxt", import: "?", export: "-"},
         {name: "PSP/PS3 GIM", ext: ".gim", import: "?", export: "-"},

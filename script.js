@@ -2,6 +2,7 @@
 links = [
     { name: "Welcome", url: "manual/landing.html", subpages: [
         { name: "Open-source licenses", url: "manual/under_construction.html", subpages: [] },
+        { name: "Try void◆sprite", url: "manual/run_web.html", subpages: [] },
     ] },
     { name: "Introduction", url: "manual/introduction.html", subpages: [
         { name: "System requirements", url: "manual/requirements.html", subpages: [] },
