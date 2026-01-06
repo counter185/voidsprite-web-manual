@@ -8,11 +8,39 @@
         <link rel="stylesheet" type="text/css" href="../style.css">
         <script src="singlepage.js"></script>
         <meta charset="UTF-8">
+
+        <script>
+window.onbeforeunload = function (e) {
+    return window.confirm("Unsaved changes will be lost. Close the page?");
+};
+        </script>
+
     </head>
     <body onload="checkIframe()">
         <div class="manual-body">
             <h1>◆Try void◆sprite in your browser</h1>
             <iframe frameborder="0" src="https://itch.io/embed-upload/16024639?color=050505" allowfullscreen="" width="1280" height="740"><a href="https://cntrpl.itch.io/voidsprite">Play void◆sprite on itch.io</a></iframe>
+            <p>
+                The browser version of voidsprite has the following limitations:
+            </p>
+            <ul>
+                <li>Split sessions are only limited to the temporary file system and cannot be imported</li>
+                <li>Previewing RPG Maker LMU maps is not available</li>
+                <li>Network canvas is not available</li>
+                <li>AVIF and JXL images are not supported</li>
+            </ul>
+            <p>
+                All other features should work similarly to the desktop version.
+            </p>
+            <div class="block-warning">
+                ◆All files are stored locally inside a temporary file system that resets when the page is reloaded.<br>
+                Save your work before closing or refreshing the page.
+            </div>
+            <br><br>
+            <div class="block-hint">
+                ◆To save a file, save it anywhere inside the temporary file system.<br>
+                The file will be downloaded.
+            </div>
         </div>
     </body>
 </html>
