@@ -64,6 +64,7 @@ compatListTargets = [
             notes: "only DXT1, DXT3, DXT5 and ARGB32"
         },
         {name: "GoldSrc SPR", ext: ".spr", import: "+", export: "-"},
+        {name: "GIF", ext: ".gif", import: "+", export: "?"},
         {name: "Windows 1.0/2.0/3.11 Paint", ext: ".msp", import: "?", export: "-"},
         {name: "PS Vita GXT", ext: ".gxt", import: "?", export: "-"},
         {name: "PSP/PS3 GIM", ext: ".gim", import: "?", export: "-"},
