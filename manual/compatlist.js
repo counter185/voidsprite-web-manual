@@ -65,6 +65,9 @@ compatListTargets = [
         },
         {name: "GoldSrc SPR", ext: ".spr", import: "+", export: "-"},
         {name: "GIF", ext: ".gif", import: "+", export: "?"},
+        {name: "Godot Engine Compressed texture", ext: ".ctex", import: "~", export: "-",
+            notes: "only WEBP and PNG subformats"
+        },
         {name: "Windows 1.0/2.0/3.11 Paint", ext: ".msp", import: "?", export: "-"},
         {name: "PS Vita GXT", ext: ".gxt", import: "?", export: "-"},
         {name: "PSP/PS3 GIM", ext: ".gim", import: "?", export: "-"},
