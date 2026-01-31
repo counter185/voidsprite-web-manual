@@ -10,7 +10,7 @@ links = [
         { name: "Workspaces", url: "manual/workspaces.html", subpages: [] },
     ] },
     { name: "voidsprite Launchpad", url: "manual/launchpad.html", subpages: [
-        { name: "About color modes", url: "manual/under_construction.html", subpages: [] },
+        { name: "About color modes", url: "manual/colormodes.html", subpages: [] },
         { name: "Templates", url: "manual/templates.html", subpages: [] },
         { name: "Quick Convert", url: "manual/quickconvert.html", subpages: [] },
         { name: "Recovery autosaves", url: "manual/recoveryautosaves.html", subpages: [] },

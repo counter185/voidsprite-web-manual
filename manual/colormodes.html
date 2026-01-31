@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" type="text/css" href="../style.css">
+        <script src="singlepage.js"></script>
+        <meta charset="UTF-8">
+    </head>
+    <body onload="checkIframe()">
+        <div class="manual-body">
+            <h1>◆Color modes</h1>
+            <p>
+                The main editor can work with two color modes: RGBA and indexed.<br><br>
+                When creating a new image througe the <a class="manual-link" href="launchpad.html?back=workspaces">voidsprite Launchpad</a>,
+                the color mode needs to be chosen manually.<br>
+                When importing a file, the color mode is determined automatically based on the file's contents.
+            </p>
+
+            <h2>◆RGB mode</h2>
+            <p>
+                In this mode, each pixel is directly represented using red, green, blue and alpha values, allowing full 32-bit color.<br>
+                <img class="img-realpx" src="img/rgbcolors.png">
+                The color picker has different options for choosing colors:
+                <ul>
+                    <li>Visual: choose the color using a hue slider and a 2D saturation/value area</li>
+                    <li>Sliders: choose the color using HSV and RGB sliders</li>
+                    <li>Other: choose the color using sliders for other color models (CMYK, YCbCr, HSL)</li>
+                </ul>
+            </p>
+            <p>
+                The input field below the color picker can be used to directly enter the color value in hex format (#RRGGBB), or the name of a color from an installed palette.<br>
+                Additionally, the Palettes tab can be used to choose colors from installed palettes.
+
+                <div class="block-hint">
+                    To choose a random color, enter "rand" or "random" in the color input field.
+                </div>
+            </p>
+            <p>
+                Some features, such as filters and layer opacity are only available in this mode.
+            </p>
+
+            <h2>◆Indexed mode</h2>
+            <p>
+                In this mode, each pixel is represented by an index that refers to a color in a palette.<br>
+                It's intended for working with formats that enforce a limited color palette.
+                <br>
+                <img class="img-realpx" src="img/indexedcolors.png">
+                <br>
+                The color picker only allows choosing colors from the current palette. To edit a color, right-click it.
+            </p>
+
+            <div class="block-hint">
+                If you just want to use a color palette, consider using the less-limited RGB mode instead.
+            </div>
+            <br><br>
+            <div class="block-warning">
+                Transparent pixels erased with the eraser tool will be set to index #0 when exporting.<br>
+                (does not apply when exporting to .voidsn)
+            </div>
+
+            <p>
+                Filters and layer opacity are not available in this mode.
+            </p>
+
+            <h3>◆Converting from RGB to indexed</h3>
+            <p>
+                To convert a workspace from RGB to indexed mode, choose <span class="navbar-hint">File</span> &gt; <span class="navbar-hint">Open in indexed editor</span> on the navigation bar.<br><br>
+                Your current workspace will remain open in RGB mode, and a copied workspace will open in indexed mode.<br>
+            </p>
+            <div class="block-warning">
+                Your image must have up to 256 colors.<br>
+                To reduce the number of colors, use <span class="navbar-hint">Filters</span> &gt; <span class="navbar-hint">Quantize colors</span>.
+            </div>
+
+            <h3>◆Converting from indexed to RGB</h3>
+            <p>
+                To convert a workspace from indexed to RGB mode, choose <span class="navbar-hint">File</span> &gt; <span class="navbar-hint">Open in RGB editor</span> on the navigation bar.<br><br>
+                Your current workspace will remain open in indexed mode, and a copied workspace will open in RGB mode.<br>
+            </p>
+
+        </div>
+    </body>
+</html>
