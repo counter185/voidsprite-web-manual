@@ -7,6 +7,7 @@ compatListTargets = [
         {name: "JPEG", ext: ".jpeg", import: "+", export: "+"},
         {name: "AVIF", ext: ".avif", import: "+", export: "+"},
         {name: "BMP", ext: ".bmp", import: "+", export: "~"},
+        {name: "GIF", ext: ".gif", import: "+", export: "+"},
         {name: "TGA", ext: ".tga", import: "+", export: "~"},
         {name: "JPEG XL", ext: ".jxl", import: "+", export: "+"},
         {name: "Portable Bitmap,<br>Graymap, Pixmap", ext: ".pbm .pgm .ppm", import: "+", export: "~"},
@@ -64,7 +65,6 @@ compatListTargets = [
             notes: "only DXT1, DXT3, DXT5 and ARGB32"
         },
         {name: "GoldSrc SPR", ext: ".spr", import: "+", export: "-"},
-        {name: "GIF", ext: ".gif", import: "+", export: "?"},
         {name: "Godot Engine Compressed texture", ext: ".ctex", import: "~", export: "-",
             notes: "only WEBP and PNG subformats"
         },
