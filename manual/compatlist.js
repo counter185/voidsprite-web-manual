@@ -85,6 +85,9 @@ compatListTargets = [
         {name: "Java BufferedImage", ext: ".java", import: "-", export: "~",
             notes: "only works for small images. Larger images go beyond the function size limit."
         },
+        {name: "AVI", ext: ".avi", import: "-", export: "+",
+            notes: "RGBA codec"
+        },
     ]
 },
 {
