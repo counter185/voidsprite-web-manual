@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" type="text/css" href="../style.css">
+        <script src="singlepage.js"></script>
+        <meta charset="UTF-8">
+    </head>
+    <body onload="checkIframe()">
+        <div class="manual-body">
+            <h1>◆Download void◆sprite</h1>
+
+            <h2>◆Try in browser</h2>
+            <p>
+                void◆sprite has a web browser version with limited features. <a class="manual-link" href="run_web.html?back=downloads">Try it here</a>
+            </p>
+
+            <h2>◆Automatic builds</h2>
+            <p>
+                These versions are served by nightly.link and are automatically built whenever a change to the code is made. They contain the latest features, but may be unstable.
+                <ul>
+                    <li><span class="platform platform-windows">◆Windows (x64) [for most PCs]</span>
+                        <a href="https://nightly.link/counter185/voidsprite/workflows/msbuild/main/voidsprite-build-win64.zip">voidsprite-build-win64.zip</a></li>
+                    <li><span class="platform platform-windows">◆Windows (x86)</span>
+                        <a href="https://nightly.link/counter185/voidsprite/workflows/msbuild/main/voidsprite-build-windows-x86.zip">voidsprite-build-windows-x86.zip</a></li>
+                    <li><span class="platform platform-windows">◆Windows (arm64)</span>
+                        <a href="https://nightly.link/counter185/voidsprite/workflows/msbuild/main/voidsprite-build-windows-arm64.zip">voidsprite-build-windows-arm64.zip</a></li>
+                    <li><span class="platform platform-linux">◆Linux (AppImage)</span>
+                        <a href="https://nightly.link/counter185/voidsprite/workflows/msbuild/main/voidsprite-build-linux-appimage-x64.zip">voidsprite-build-linux-appimage-x64.zip</a></li>
+                    <li><span class="platform platform-linux">◆Linux (Flatpak)</span>
+                        <a href="https://nightly.link/counter185/voidsprite/workflows/msbuild/main/voidsprite-build-linux64-flatpak-x86_64.flatpak.zip">voidsprite-build-linux64-flatpak-x86_64.flatpak.zip</a></li>
+                    <li><span class="platform platform-mac">◆macOS (x64, arm64)</span>
+                        <a href="https://nightly.link/counter185/voidsprite/workflows/msbuild/main/voidsprite-build-mac-universal.zip">voidsprite-build-mac-universal.zip</a></li>
+                    <li><span class="platform platform-android">◆Android (arm64-v8a, armeabi-v7, x64)</span>
+                        <a href="https://nightly.link/counter185/voidsprite/workflows/msbuild/main/voidsprite-build-android.zip">voidsprite-build-android.zip</a></li>
+                </ul>
+            </p>
+            <div class="block-warning">
+                    void◆sprite is currently considered alpha software. 
+                    <br>Some features may be missing or not work.
+                </div>
+
+            <h2>◆Monthly builds</h2>
+            <p>
+                These versions are built and released at the end of every month. They don't have the latest features, but may be more stable.
+                <br><br>
+                Monthly builds are available on:
+                <ul>
+                    <li>itch.io: <a href="https://cntrpl.itch.io/voidsprite">cntrpl.itch.io/voidsprite</a></li>
+                    <li>GitHub: <a href="https://github.com/counter185/voidsprite/releases">github.com/counter185/voidsprite/releases</a></li>
+                </ul>
+            </p>
+
+            <h3>◆void◆sprite autoupdater</h3>
+            <p>
+                void◆sprite autoupdater is available through itch.io for supporters who donate $2 or more.<br><br>
+                The autoupdater is a launcher for void◆sprite that automatically updates it to the latest automatic build.
+            </p>
+            <div class="block-hint">
+                void◆sprite autoupdater is only compatible with x64 versions of Windows 7 and later.
+            </div>
+
+            <h3>◆Hosting the web version</h3>
+            <p>
+                The latest automatic build of the web version is also available through nightly.link: <a href="https://nightly.link/counter185/voidsprite/workflows/msbuild/main/voidsprite-build-emscripten.zip">voidsprite-build-emscripten.zip</a>.
+                <br><br>
+                index.html contains a page that launches void◆sprite, you may either modify it directly or embed it with an iframe.
+            </p>
+            <div class="block-warning">
+                The web version of void◆sprite can only be loaded through a HTTP server.<br>
+                Running the page from a local file:/// URL will not work.
+            </div>
+        </div>
+    </body>
+</html>
