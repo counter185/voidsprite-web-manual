@@ -47,6 +47,9 @@ compatListTargets = [
         {name: "X-Com SPK, BDY, SCR", ext: ".spk .bdy .scr", import: "+", export: "-"},
         {name: "Windows Shell Scrap", ext: ".shs", import: "+", export: "-"},
         {name: "Pix2D session", ext: ".pix2d", import: "~", export: "-"},
+        {name: "Resprite session", ext: ".resprite", import: "~", export: "-",
+            notes: "layer blend modes, groups and tilemaps not supported"
+        },
         {name: "Pixilart session", ext: ".pixil", import: "+", export: "-", 
             notes: "animations and filters not supported [only frame 1 is imported]"
         },
@@ -58,6 +61,7 @@ compatListTargets = [
         {name: "DirectDraw Surface", ext: ".dds", import: "~", export: "-",
             notes: "only BC1, BC2, BC3 and BGRA8888"
         },
+        {name: "ASTC texture", ext: ".astc", import: "+", export: "-"},
         {name: "Wii/GameCube TPL", ext: ".tpl", import: "~", export: "-",
             notes: "only I4, RGB5A3, RGBA32"
         },
