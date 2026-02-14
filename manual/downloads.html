@@ -10,7 +10,7 @@
         <meta charset="UTF-8">
     </head>
     <body onload="checkIframe()">
-        <div class="manual-body">
+        <div class="manual-body" onload="recommendDownload()">
             <h1>◆Download void◆sprite</h1>
 
             <h2>◆Try in browser</h2>
@@ -22,19 +22,19 @@
             <p>
                 These versions are served by nightly.link and are automatically built whenever a change to the code is made. They contain the latest features, but may be unstable.
                 <ul>
-                    <li><span class="platform platform-windows">◆Windows (x64) [for most PCs]</span>
+                    <li><span id="dl-winx64" class="platform platform-windows">◆Windows (x64) [for most PCs]</span>
                         <a href="https://nightly.link/counter185/voidsprite/workflows/msbuild/main/voidsprite-build-win64.zip">voidsprite-build-win64.zip</a></li>
-                    <li><span class="platform platform-windows">◆Windows (x86)</span>
+                    <li><span id="dl-winx86" class="platform platform-windows">◆Windows (x86)</span>
                         <a href="https://nightly.link/counter185/voidsprite/workflows/msbuild/main/voidsprite-build-windows-x86.zip">voidsprite-build-windows-x86.zip</a></li>
-                    <li><span class="platform platform-windows">◆Windows (arm64)</span>
+                    <li><span id="dl-winarm64" class="platform platform-windows">◆Windows (arm64)</span>
                         <a href="https://nightly.link/counter185/voidsprite/workflows/msbuild/main/voidsprite-build-windows-arm64.zip">voidsprite-build-windows-arm64.zip</a></li>
-                    <li><span class="platform platform-linux">◆Linux (AppImage)</span>
+                    <li><span id="dl-linux" class="platform platform-linux">◆Linux (AppImage)</span>
                         <a href="https://nightly.link/counter185/voidsprite/workflows/msbuild/main/voidsprite-build-linux-appimage-x64.zip">voidsprite-build-linux-appimage-x64.zip</a></li>
                     <li><span class="platform platform-linux">◆Linux (Flatpak)</span>
                         <a href="https://nightly.link/counter185/voidsprite/workflows/msbuild/main/voidsprite-build-linux64-flatpak-x86_64.flatpak.zip">voidsprite-build-linux64-flatpak-x86_64.flatpak.zip</a></li>
-                    <li><span class="platform platform-mac">◆macOS (x64, arm64)</span>
+                    <li><span id="dl-mac" class="platform platform-mac">◆macOS (x64, arm64)</span>
                         <a href="https://nightly.link/counter185/voidsprite/workflows/msbuild/main/voidsprite-build-mac-universal.zip">voidsprite-build-mac-universal.zip</a></li>
-                    <li><span class="platform platform-android">◆Android (arm64-v8a, armeabi-v7, x64)</span>
+                    <li><span id="dl-android" class="platform platform-android">◆Android (arm64-v8a, armeabi-v7, x64)</span>
                         <a href="https://nightly.link/counter185/voidsprite/workflows/msbuild/main/voidsprite-build-android.zip">voidsprite-build-android.zip</a></li>
                 </ul>
             </p>
@@ -74,5 +74,6 @@
                 Running the page from a local file:/// URL will not work.
             </div>
         </div>
+        <script src="dl-recommend.js"></script>
     </body>
 </html>
