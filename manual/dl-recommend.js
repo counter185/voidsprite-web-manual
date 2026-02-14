@@ -6,10 +6,10 @@ function recommendDownload() {
         ["dl-winx86", "WOW64"],
         ["dl-winx86", "Windows NT"],
         ["dl-winx86", "Win32"],
+        ["dl-android", "Android"],
         ["dl-linux", "Linux"],
         ["dl-linux", "X11"],
         ["dl-mac", "OS X"],
-        ["dl-android", "Android"],
     ];
 
     for (var i = 0; i < matchList.length; i++) {
