@@ -15,7 +15,6 @@ compatListTargets = [
         {name: "Windows cursor", ext: ".cur", import: "+", export: "+"},
         {name: "OpenRaster", ext: ".ora", import: "+", export: "+",
             notes: "advanced features from painting programs like layer blend modes, etc. are not available here."
-                    + "<br>Exporting the thumbnail will not work until color quantization is implemented." 
         },
         {name: "Pixel Studio session", ext: ".psp", import: "~", export: "+",
             notes: "a 1:1 read of this format requires accurately implementing every tool from that program."
@@ -36,6 +35,7 @@ compatListTargets = [
         },
         {name: "Piskel", ext: ".piskel", import: "~", export: "+"},
         {name: "Lospec Pixel Editor", ext: ".lpe", import: "+", export: "+"},
+        {name: "GameMaker YYTEX", ext: ".yytex", import: "+", export: "+"},
     ]
 },
 {
@@ -90,7 +90,7 @@ compatListTargets = [
             notes: "only works for small images. Larger images go beyond the function size limit."
         },
         {name: "AVI", ext: ".avi", import: "-", export: "+",
-            notes: "RGBA codec"
+            notes: "RGBA or Motion JPEG codec"
         },
     ]
 },
