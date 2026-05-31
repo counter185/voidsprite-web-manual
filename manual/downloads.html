@@ -5,6 +5,13 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/default.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/bash.min.js"></script>
+        
+        <script>hljs.highlightAll();</script>
+
         <link rel="stylesheet" type="text/css" href="../style.css">
         <script src="singlepage.js"></script>
         <meta charset="UTF-8">
@@ -39,9 +46,9 @@
                 </ul>
             </p>
             <div class="block-warning">
-                    void◆sprite is currently considered alpha software. 
-                    <br>Some features may be missing or not work.
-                </div>
+                void◆sprite is currently considered alpha software. 
+                <br>Some features may be missing or not work.
+            </div>
 
             <h2>◆Monthly builds</h2>
             <p>
@@ -54,6 +61,14 @@
                 </ul>
             </p>
 
+            <h3>◆Mac note</h3>
+            <p>
+                If you're getting the error:<br>
+                <code>Apple could not verify that "voidsprite.app" is free of malware that may harm your Mac or compromise your privacy.</code> <br>
+                Run this command in Terminal:<br>
+                <pre><code class="codeblock language-bash">xattr -d com.apple.quarantine voidsprite.app</code></pre>
+            </p>
+            
             <h3>◆void◆sprite autoupdater</h3>
             <p>
                 void◆sprite autoupdater is available through itch.io for supporters who donate $2 or more.<br><br>
