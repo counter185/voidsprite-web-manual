@@ -11,6 +11,7 @@ compatListTargets = [
         {name: "TGA", ext: ".tga", import: "+", export: "~"},
         {name: "JPEG XL", ext: ".jxl", import: "+", export: "+"},
         {name: "Portable Bitmap,<br>Graymap, Pixmap", ext: ".pbm .pgm .ppm", import: "+", export: "~"},
+        {name: "PEP (Prediction-Encoded Pixels)", ext: ".pep", import: "+", export: "+"},
         {name: "X Bitmap", ext: ".xbm", import: "+", export: "+"},
         {name: "Windows cursor", ext: ".cur", import: "+", export: "+"},
         {name: "OpenRaster", ext: ".ora", import: "+", export: "+",
