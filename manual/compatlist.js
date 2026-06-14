@@ -99,7 +99,7 @@ compatListTargets = [
     target: "table-palette",
     compat: [
         {name: "voidsprite palette", ext: ".voidplt", import: "+", export: "+"},
-        {name: "Hex palette", ext: ".hex", import: "+", export: "-"},
+        {name: "Hex palette", ext: ".hex", import: "+", export: "+"},
         {name: "paint.net palette", ext: ".txt", import: "+", export: "-"},
         {name: "JASC-PAL palette", ext: ".pal", import: "+", export: "-"},
         {name: "GIMP GPL palette", ext: ".gpl", import: "+", export: "-"},
