@@ -36,10 +36,11 @@ links = [
         { name: "Zlib compression", url: "manual/advanced_zlib.html", subpages: [] },
         { name: "Native plugin API", url: "manual/under_construction.html", subpages: [
             { name: "Full API reference", url: "manual/api_full.html", subpages: [
-                { name: "File IO functions", url: "manual/under_construction.html", subpages: [] },
+                { name: "File IO functions", url: "manual/api_files.html", subpages: [] },
                 { name: "Filter functions", url: "manual/api_filters.html", subpages: [] },
                 { name: "Layer functions", url: "manual/api_layers.html", subpages: [] },
-                { name: "Editor functions", url: "manual/under_construction.html", subpages: [] },
+                { name: "Editor functions", url: "manual/api_editor.html", subpages: [] },
+                { name: "Other functions", url: "manual/api_other.html", subpages: [] },
             ] },
             { name: "Get started", url: "manual/sdk_start.html", subpages: [] },
             { name: "Custom file importers", url: "manual/under_construction.html", subpages: [] },

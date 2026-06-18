@@ -14,6 +14,7 @@
         <script>hljs.highlightAll();</script>
 
         <link rel="stylesheet" type="text/css" href="../style.css">
+        <script src="api_docs.js"></script>
         <script src="singlepage.js"></script>
         <meta charset="UTF-8">
     </head>
@@ -25,10 +26,38 @@
             </div>
 
             <p>
-                <a class="manual-link" href="api_layers.html?back=api_full">Layer API reference</a>
+                <a class="manual-link" href="api_files.html?back=api_full">File IO API reference</a>
+                <p id="list_files"></p>
                 <br><br>
-                <a class="manual-link" href="api_filters.html?back=api_full">Filter API reference</a>
             </p>
+            <p>
+                <a class="manual-link" href="api_layers.html?back=api_full">Layer API reference</a>
+                <p id="list_layers"></p>
+                <br><br>
+            </p>
+            <p>
+                <a class="manual-link" href="api_filters.html?back=api_full">Filter API reference</a>
+                <p id="list_filters"></p>
+                <br><br>
+            </p>
+            <p>
+                <a class="manual-link" href="api_editor.html?back=api_full">Editor API reference</a>
+                <p id="list_editor"></p>
+                <br><br>
+            </p>
+            <p>
+                <a class="manual-link" href="api_other.html?back=api_full">Other API reference</a>
+                <p id="list_other"></p>
+                <br><br>
+            </p>
+
+            <script>
+                document.getElementById("list_files").innerHTML = listApiDocsFunctions("files");
+                document.getElementById("list_layers").innerHTML = listApiDocsFunctions("layers");
+                document.getElementById("list_filters").innerHTML = listApiDocsFunctions("filters");
+                document.getElementById("list_editor").innerHTML = listApiDocsFunctions("editor");
+                document.getElementById("list_other").innerHTML = listApiDocsFunctions("other");
+            </script>
         </div>
     </body>
 </html>

@@ -488,6 +488,11 @@ div.content {
     color: lightblue;
 }
 
+#api_root h3 {
+    text-wrap-mode: wrap;
+    font-size: 1.5em;
+}
+
 .codeblock {
     border: 1px solid #202020;
     background: linear-gradient(90deg, #20202040, #00000000);
