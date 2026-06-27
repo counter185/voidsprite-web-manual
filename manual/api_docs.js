@@ -422,6 +422,7 @@ api_doc = {
                 + "<br>If the key doesn't exist, \"--NO KEY\" will be returned."
                 + "<br>For example, passing \"vsp.cmn.error\" will return \"Error\"."
                 + "<br>All available localization keys can be found in the <a target=\"_blank\" href=\"https://github.com/counter185/voidsprite/blob/main/freesprite/localization/localization_english.txt\">localization_english.txt</a> file."
+                + "<br>This pointer is managed by voidsprite and must not be freed or modified."
         }
     ]
 }
