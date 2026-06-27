@@ -246,6 +246,16 @@ api_doc = {
 
     "editor": [
         {
+            "return": "void",
+            "name": "registerEditorAction",
+            "params": [
+                fnParam("const char*", "name", "the name of your action"),
+                fnParam(fnPointer("void", [apiType("VSPEditorContext*") + " editor"]), "action", "the function to call when running your action")
+            ],
+            "description": "Registers a new editor action."
+                + "<br>The action will be accessible from the <span class=navbar-hint>Actions</span> menu on the navigation bar."
+        },
+        {
             "return": "uint32",
             "name": "editorGetActiveColor",
             "params": [
@@ -295,6 +305,55 @@ api_doc = {
             ],
             "description": "Sets a pixel to the specified color."
                             + "<br>Unlike layerSetPixel, this function will be affected by symmetry, eraser mode, brush blend mode and the current brush alpha."
+        },
+        {
+            "return": "void",
+            "name": "editorUndoPushLayerState",
+            "params": [
+                fnParam(apiType("VSPEditorContext*"), "editor", "the target editor context"),
+                fnParam(apiType("VSPLayer"), "layer", "the target layer"),
+            ],
+            "description": "Pushes the current layer state onto the undo stack."
+                            + "<br>Do this before modifying a layer's pixels outside of brush and filter code."
+        },
+        {
+            "return": apiType("VSPLayer*"),
+            "name": "editorFlattenImage",
+            "params": [
+                fnParam(apiType("VSPEditorContext*"), "editor", "the target editor context")
+            ],
+            "return_desc": "layer containing the merged image",
+            "description": "Merges all layers in the editor's current frame to a newly allocated layer."
+                            + "<br>This layer must be freed with <span class=api-fn>layerFree</span> after use."
+        },
+        {
+            "return": apiType("VSPLayer*"),
+            "name": "editorFlattenFrame",
+            "params": [
+                fnParam(apiType("VSPEditorContext*"), "editor", "the target editor context"),
+                fnParam("int", "index", "the target frame index")
+            ],
+            "return_desc": "layer containing the merged image",
+            "description": "Merges all layers in the selected frame to a newly allocated layer."
+                            + "<br>This layer must be freed with <span class=api-fn>layerFree</span> after use."
+        },
+        {
+            "return": "int",
+            "name": "editorGetNumFrames",
+            "params": [
+                fnParam(apiType("VSPEditorContext*"), "editor", "the target editor context")
+            ],
+            "return_desc": "number of frames in the editor",
+            "description": "Gets the number of frames in an editor session."
+        },
+        {
+            "return": "int",
+            "name": "editorGetActiveFrameIndex",
+            "params": [
+                fnParam(apiType("VSPEditorContext*"), "editor", "the target editor context")
+            ],
+            "return_desc": "the index of the current active frame",
+            "description": "Gets the index of the current active frame in an editor session."
         }
     ],
 
@@ -350,6 +409,19 @@ api_doc = {
                             + "<br>The notification will use the #FFBABA color, last 5 seconds and use the success icon."
                             + "<br>Text must be encoded in UTF-8."
                             + "<br>It's safe to call this function from a thread."
+        },
+        {
+            "return": "const char*",
+            "name": "vspGetLocalizedString",
+            "params": [
+                fnParam("const char*", "key", "the target localization key")
+            ],
+            "return_desc": "a localized string corresponding to the localization key."
+                            + "<br>\"--NO KEY\" if it does not exist.",
+            "description": "Gets a localized string from the current active localization."
+                + "<br>If the key doesn't exist, \"--NO KEY\" will be returned."
+                + "<br>For example, passing \"vsp.cmn.error\" will return \"Error\"."
+                + "<br>All available localization keys can be found in the <a target=\"_blank\" href=\"https://github.com/counter185/voidsprite/blob/main/freesprite/localization/localization_english.txt\">localization_english.txt</a> file."
         }
     ]
 }
