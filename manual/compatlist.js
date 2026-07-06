@@ -22,6 +22,7 @@ compatListTargets = [
                     + "<br>For the best experience, wipe the undo history before attempting an import (Functions -> Resize canvas -> Resize -> Yes)."
         },
         {name: "Pixel Studio session<br>(compressed)", ext: ".psx", import: "~", export: "+"},
+        {name: "GraphicsGale session", ext: ".gal", import: "~", export: "?"},
         {name: "XYZ (RPG Maker 2000/2003)", ext: ".xyz", import: "+", export: "+"},
         {name: "DIBv5 Clipboard dump", ext: ".dibv5", import: "~", export: "+",
             notes: "JPEG, RLE4 and RLE8 subformats currently not supported."
