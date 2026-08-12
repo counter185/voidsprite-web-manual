@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/bin/bash
 
 [[ $(curl https://cntrpl.itch.io/voidsprite) =~ \&quot\;https:\/\/[a-z\.\-]+itch\.zone\/html\/([0-9]+)\/[a-zA-Z0-9\/\?=\.]+\&quot\; ]] && ITCHID=${BASH_REMATCH[1]}
 echo new itch id is $ITCHID
