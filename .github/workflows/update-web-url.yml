@@ -1,0 +1,27 @@
+name: Update itch web url
+
+on:
+    workflow_dispatch:
+
+jobs:
+    update-itch-embed:
+        runs-on: ubuntu-latest
+        permissions:
+            contents: write
+        steps:
+        - name: checkout
+          uses: actions/checkout@v6
+          with:
+            persist-credentials: false
+            fetch-depth: 0
+
+        - name: modify run_web.html
+          working-directory: ${{env.GITHUB_WORKSPACE}}
+          run:
+            chmod +x ./update_web_url.sh && ./update_web_url.sh
+        
+        - name: push
+          uses: actions-js/push@master
+          with:
+            message: '[auto] update itch embed url'
+            github_token: ${{ secrets.GITHUB_TOKEN }}
