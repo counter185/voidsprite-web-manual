@@ -79,6 +79,7 @@ compatListTargets = [
         {name: "PSP/PS3 GIM", ext: ".gim", import: "?", export: "-"},
         {name: "Nintendo 3DS app icon", ext: ".cxi", import: "?", export: "-"},
         {name: "XNA XNB", ext: ".xnb", import: "?", export: "-"},
+        {name: "RPG Maker MV image", ext: ".rpgmvp", import: "+", export: "-"},
         {name: "Every other SDL_Image format", ext: "*", import: "+", export: "-"},
     ]
 },
