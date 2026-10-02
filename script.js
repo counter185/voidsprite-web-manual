@@ -16,7 +16,7 @@ links = [
         { name: "Quick Convert", url: "manual/quickconvert.html", subpages: [] },
         { name: "Recovery autosaves", url: "manual/recoveryautosaves.html", subpages: [] },
     ] },
-    { name: "Editor", url: "manual/under_construction.html", subpages: [
+    { name: "Editor", url: "manual/editor.html", subpages: [
         { name: "Tools", url: "manual/under_construction.html", subpages: [] },
         { name: "Patterns", url: "manual/patterns.html", subpages: [] },
         { name: "Spritesheet preview", url: "manual/under_construction.html", subpages: [] },

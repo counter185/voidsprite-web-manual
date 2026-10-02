@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" type="text/css" href="../style.css">
+        <script src="singlepage.js"></script>
+        <meta charset="UTF-8">
+    </head>
+    <body onload="checkIframe()">
+        <style>
+            .whitespan {
+                background:white; 
+                color:black; 
+                padding-left:0.3em;
+                padding-right:0.3em;
+            }
+        </style>
+
+        <div class="manual-body">
+            <h1>◆Editor</h1>
+            <p>
+                <img style="width: min(90%, 1402px);" src="img/editor.png">
+            </p>
+
+            <p>The Editor is the main part of voidsprite where image editing takes place.</p>
+
+            <h2><span class="whitespan">1</span> Navigation bar</h2>
+            <p>
+                Most Editor actions are located here.
+            </p>
+            <ul>
+                <li><span class="navbar-hint">File</span> - file-related actions like saving and exporting.</li>
+                <li><span class="navbar-hint">Edit</span> - actions affecting the entire canvas, like resizing, scaling and flipping.</li>
+                <li><span class="navbar-hint">Layer</span> - actions affecting only the current layer and its layer variants.</li>
+                <li><span class="navbar-hint">Filters</span>, <span class="navbar-hint">Render</span> - filters that manipulate the current layer in some way, like Blur, Pixelize, etc. These are not available in Indexed editors.</li>
+                <li><span class="navbar-hint">View</span> - actions related to the canvas view, like toggling comments, guidelines, pixel grid and references. The Preview, Touch mode and Frames panels can be open here.</li>
+                <li><span class="navbar-hint">Preview</span> - previews of the current canvas in different contexts, like spritesheet, 3D cube, etc.</li>
+                <li><span class="navbar-hint">Actions</span> - other editor actions.</li>
+            </ul>
+
+            <h2><span class="whitespan">2</span> Action bar</h2>
+            <p>
+                This bar contains quick undo, redo, zoom and save actions, as well as a dropdown to choose the current brush blend mode.
+            </p>
+
+            <h2><span class="whitespan">3</span> Color picker</h2>
+            <p>
+                This panel controls the current active color. In an Indexed editor, you may only choose colors from the current palette.
+                <br><br>More about the Color picker: <a class="manual-link" href="colormodes.html?back=editor">About color modes</a>
+            </p>
+
+            <h2><span class="whitespan">4</span> Tools</h2>
+            <p>
+                This panel lets you choose the current active brush/tool. Hover over one of the tool buttons for more details about its use.
+                <br>Tools marked with a blue border override the default right click action - otherwise right click picks color from the current image.
+                <br><br>The <span class="vsp-button">R</span> button controls replace mode. When enabled, only already opaque pixels can be drawn on.
+                <br><br>The <span class="vsp-button"><img style="display: inline-block; margin-top: 0.5em" class="img-realpx" src="img/pattern_full.png"> &gt;</span> button opens the <a class="manual-link" href="patterns.html?back=editor">Patterns</a> panel.
+            </p>
+
+            <h2><span class="whitespan">5</span> Editing time</h2>
+            <p>
+                Timer that keeps track of active editing time. Only counts up when the window is focused.
+            </p>
+
+            <h2><span class="whitespan">6</span> Layers</h2>
+            <p>
+                This panel shows you a list of all the layers in your project. Buttons above the list let you add, delete, move, merge and duplicate the current layer.
+                <br>Clicking one of the layers sets it to be the current active layer.
+                <br><br>The Opacity slider controls the current layer's opacity and is not available in Indexed mode.
+
+                <div class="block-hint">
+                    Instead of duplicating layers to make minor changes while keeping the original, consider using Layer variants.
+                    <br>Right click the layer and choose <span class="vsp-button">Duplicate current variant</span> to get started.
+                </div>
+            </p>
+
+            <h2><span class="whitespan">7</span> Canvas</h2>
+            <p>
+                The current image. 
+                <br><br>Left click to use the current brush/tool.
+                <br><br>Right click to pick the color from the current image at cursor position. If Ctrl is held, the color is picked from the current layer instead of the whole image.
+                <br>Brushes/tools with a blue border override this action.
+            </p>
+
+            <h2><span class="whitespan">8</span> Undo history</h2>
+            <p>
+                A history of your recent actions. To the left are undoable actions - to the right are redoable actions.
+            </p>
+
+            <h2><span class="whitespan">9</span> Unsaved changes indicator</h2>
+            <p>
+                Appears only when there are unsaved changes in the current session.
+                <br>Time since last save is shown to the left of the icon.
+                <br><br>◆ means there are unsaved changes.
+                <br>◇ means there are unsaved changes, but a <a class="manual-link" href="recoveryautosaves.html?back=editor">Recovery autosave</a> has occurred.
+            </p>
+
+            <h2><span class="whitespan">10</span> Brush options</h2>
+            <p>
+                This section of the <span class="whitespan">2</span> Action bar has options available for the current brush.
+            </p>
+
+            <h3>◆Touch screen input</h3>
+            <p>
+                When using a touch screen, the Touch mode panel will appear.
+                <img class="img-realpx" src="img/touchmode.png">
+            </p>
+            <p>
+                The Touch mode panel lets you switch between different modes that control what touch screen input does:
+                <ul>
+                    <li><span class="vsp-button">Pan</span> - touch input will pan and zoom the canvas.</li>
+                    <li><span class="vsp-button">Mouse left</span> - touch input will simulate the left mouse button.</li>
+                    <li><span class="vsp-button">Mouse right</span> - touch input will simulate the right mouse button.</li>
+                </ul>
+            </p>
+            <p>
+                <div class="block-hint">
+                    The Touch mode panel can be manually open using <span class="navbar-hint">View</span> &gt; <span class="navbar-hint">Open touch mode panel</span>.
+                </div>
+            </p>
+
+            <h2>◆Frames</h2>
+            <p>
+                <img class="img-realpx" src="img/frames.png">
+            </p>
+            <p>
+                The Frames panel can be open with <span class="navbar-hint">View</span> &gt; <span class="navbar-hint">Open frames panel</span> and contains frame-based animation tools.
+                <br><br>Buttons at the top of the panel can add, delete, duplicate, move frames as well as play/pause the whole animation.
+                <br>The second row contains options for forward/backward tracing other animation frames. You can set the number of previous and next frames to trace, as well as the opacity and whether to use color modulation.
+
+                <div class="block-hint">
+                    Colors used for color modulation can be changed in Preferences.
+                </div>
+            </p>
+            <p>
+                Switch the active frame by clicking it in the frames list. Each frame has its own list of layers, which will update the <span class="whitespan">6</span> Layers list.
+            </p>
+
+            <h3>◆Reference images</h3>
+            <p>
+                Add a reference images to your current canvas using <span class="navbar-hint">View</span> &gt; <span class="navbar-hint">Add reference...</span> or <span class="navbar-hint">Add reference from clipboard...</span>.
+                <br><br>Reference images can be shown either in a floating Reference panel or above/below the canvas.
+            </p>
+            
+        </div>
+    </body>
+</html>
